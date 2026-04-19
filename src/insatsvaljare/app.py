@@ -29,7 +29,13 @@ from insatsvaljare.stabelo import (
 from insatsvaljare.tax import AccountType
 
 SNAPSHOT_PATH = Path(__file__).resolve().parents[2] / "ref" / "stabelo_snapshot.json"
-PURCHASE_YEAR = 2026
+
+
+def _horizon_dates(years: int) -> pd.DatetimeIndex:
+    """Month-end dates for each simulated month, starting from the current month."""
+    today = pd.Timestamp.today()
+    start = pd.Timestamp(year=today.year, month=today.month, day=1)
+    return pd.date_range(start=start, periods=years * 12, freq="ME")
 
 st.set_page_config(
     page_title="Insatsväljare för bostadsrätt",
@@ -519,32 +525,29 @@ legend_names = {
     "C": f"C: Ditt val (LTV {scenarios['C']['ltv']*100:.0f} %)",
 }
 
+horizon_dates = _horizon_dates(years)
+
 fig = go.Figure()
 for key in ("A", "B", "C"):
     df_s = scenarios[key]["df"]
-    x_year = PURCHASE_YEAR + df_s["month"] / 12
     fig.add_trace(go.Scatter(
-        x=x_year,
+        x=horizon_dates,
         y=df_s["net_worth"],
         name=legend_names[key],
         mode="lines",
         line=dict(color=colors[key], width=2.5, dash=dashes[key]),
-        hovertemplate="%{x:.2f}: %{y:,.0f} kr<extra></extra>",
+        hovertemplate="%{x|%b %Y}: %{y:,.0f} kr<extra></extra>",
     ))
 
 fig.update_layout(
     height=440,
-    xaxis_title="År",
+    xaxis_title="Månad",
     yaxis_title="Nettoförmögenhet (kr)",
     hovermode="x unified",
     legend=dict(orientation="h", y=-0.2),
     margin=dict(l=20, r=20, t=20, b=20),
 )
-fig.update_xaxes(
-    tickmode="array",
-    tickvals=[PURCHASE_YEAR + i for i in range(years + 1)],
-    ticktext=[str(PURCHASE_YEAR + i) for i in range(years + 1)],
-)
+fig.update_xaxes(dtick="M12", tickformat="%Y")
 fig.update_yaxes(tickformat=",.0f")
 st.plotly_chart(fig, width="stretch")
 
@@ -594,24 +597,20 @@ st.plotly_chart(fig_sweep, width="stretch")
 
 with st.expander("📊 Månadsvis kassaflöde (Ditt val)", expanded=False):
     df_c = scenarios["C"]["df"]
-    df_flow = df_c[["month", "interest", "amortization", "avgift"]].copy()
-    df_flow["år"] = PURCHASE_YEAR + df_flow["month"] / 12
+    df_flow = df_c[["interest", "amortization", "avgift"]].copy()
+    df_flow["datum"] = horizon_dates
     df_flow_long = df_flow.melt(
-        id_vars="år",
+        id_vars="datum",
         value_vars=["interest", "amortization", "avgift"],
         var_name="Post",
         value_name="kr",
     )
     fig_flow = px.area(
-        df_flow_long, x="år", y="kr", color="Post",
-        labels={"år": "År"},
+        df_flow_long, x="datum", y="kr", color="Post",
+        labels={"datum": "Månad"},
     )
     fig_flow.update_layout(height=300, margin=dict(l=20, r=20, t=20, b=20))
-    fig_flow.update_xaxes(
-        tickmode="array",
-        tickvals=[PURCHASE_YEAR + i for i in range(years + 1)],
-        ticktext=[str(PURCHASE_YEAR + i) for i in range(years + 1)],
-    )
+    fig_flow.update_xaxes(dtick="M12", tickformat="%Y")
     fig_flow.update_yaxes(tickformat=",.0f")
     st.plotly_chart(fig_flow, width="stretch")
 
