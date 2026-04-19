@@ -1,4 +1,11 @@
-"""Streamlit entry point for the Insatsväljare LTV model."""
+"""Streamlit entry point for the Insatsväljare LTV model.
+
+The UI is tri-lingual (Svenska / British English / 繁體中文). All
+user-facing strings come from `insatsvaljare.i18n`. Swedish domain
+terms are also translated in non-Swedish locales per the 2026-04
+policy change. ISK / KF / LTV abbreviations are kept as internationally
+recognised labels with glosses on first use.
+"""
 
 from __future__ import annotations
 
@@ -16,6 +23,7 @@ from insatsvaljare.defaults import (
     SimulationConfig,
     TaxModel,
 )
+from insatsvaljare.i18n import DEFAULT_LANG, LANG_LABELS, SUPPORTED_LANGS, t
 from insatsvaljare.kommunalskatt import (
     fetch_kommunalskatt_table,
     kommun_records,
@@ -50,8 +58,19 @@ def _horizon_dates(years: int) -> pd.DatetimeIndex:
     return pd.date_range(start=start, periods=years * 12, freq="ME")
 
 
+# ----------------------------------------------------------------
+# Language selector — must happen before any t() call for correct locale
+# ----------------------------------------------------------------
+
+# Lang must be available before st.set_page_config (which uses page_title).
+# Initialise from session_state with fallback, but do the widget after the
+# page config (minor: the page_title briefly uses DEFAULT_LANG until the
+# user re-renders with a different selection).
+if "lang" not in st.session_state:
+    st.session_state.lang = DEFAULT_LANG
+
 st.set_page_config(
-    page_title="Insatsväljare för bostadsrätt",
+    page_title=t("page.title"),
     page_icon="🏠",
     layout="wide",
 )
@@ -168,7 +187,7 @@ def _load_stabelo_snapshot():
     try:
         return stabelo_load_or_fetch(STABELO_SNAPSHOT, force_refresh=False)
     except Exception as e:
-        st.warning(f"Kunde inte ladda Stabelo-snapshot: {e}")
+        st.warning(t("err.stabelo_load").format(err=e))
         return []
 
 
@@ -178,83 +197,92 @@ def _load_kommun_snapshot():
         records = load_or_fetch(KOMMUN_SNAPSHOT)
         return kommun_records(records)
     except Exception as e:
-        st.warning(f"Kunde inte ladda kommunalskatt-snapshot: {e}")
+        st.warning(t("err.kommun_load").format(err=e))
         return []
 
 
 # ----------------------------------------------------------------
-# Sidebar — shared/household-wide inputs
+# Sidebar — language picker + shared/household-wide inputs
 # ----------------------------------------------------------------
 
-st.sidebar.title("🏠 Insatsväljare för bostadsrätt")
-st.sidebar.caption("Simulering av bostadsrättsköp under 2026 års bolåneregler")
+lang_labels_ordered = [LANG_LABELS[code] for code in SUPPORTED_LANGS]
+current_lang_label = LANG_LABELS[st.session_state.lang]
+chosen_label = st.sidebar.selectbox(
+    t("sidebar.lang_label"),
+    lang_labels_ordered,
+    index=lang_labels_ordered.index(current_lang_label),
+    key="lang_selector_label",
+)
+# Sync session state (label → code)
+new_code = next(code for code, lbl in LANG_LABELS.items() if lbl == chosen_label)
+if new_code != st.session_state.lang:
+    st.session_state.lang = new_code
+    st.rerun()
 
-with st.sidebar.expander("📍 Bostad", expanded=True):
+st.sidebar.title(t("sidebar.title"))
+st.sidebar.caption(t("sidebar.caption"))
+
+with st.sidebar.expander(t("sb.bostad.header"), expanded=True):
     property_value = money_input(
-        "Köpeskilling (kr)",
+        t("sb.bostad.kopeskilling"),
         key="property_value_text",
         default=6_000_000,
         min_val=1_000_000,
         max_val=30_000_000,
     )
     monthly_avgift = money_input(
-        "Månadsavgift (kr/mån)",
+        t("sb.bostad.avgift"),
         key="monthly_avgift_text",
         default=3_300,
         min_val=0,
         max_val=50_000,
     )
-    appreciation = st.slider("Värdeökning (%/år)", -2.0, 10.0, 4.0, 0.25) / 100
-    avgift_inflation = st.slider("Avgiftsinflation (%/år)", 0.0, 8.0, 2.5, 0.25) / 100
+    appreciation = st.slider(t("sb.bostad.appreciation"), -2.0, 10.0, 4.0, 0.25) / 100
+    avgift_inflation = st.slider(t("sb.bostad.avgift_inflation"), 0.0, 8.0, 2.5, 0.25) / 100
 
-with st.sidebar.expander("⏱ Tidshorisont", expanded=True):
-    years = st.slider("Innehavstid (år)", 1, 30, 10, 1)
+with st.sidebar.expander(t("sb.horizon.header"), expanded=True):
+    years = st.slider(t("sb.horizon.years"), 1, 30, 10, 1)
 
-with st.sidebar.expander("📍 Kommun (för skatteberäkning)", expanded=True):
+with st.sidebar.expander(t("sb.kommun.header"), expanded=True):
     kommun_list = _load_kommun_snapshot()
     if kommun_list:
         kommun_names = [r["name"] for r in kommun_list]
         default_idx = kommun_names.index("Stockholm") if "Stockholm" in kommun_names else 0
         chosen_name = st.selectbox(
-            "Välj kommun (stöder sökning)",
+            t("sb.kommun.select"),
             kommun_names,
             index=default_idx,
         )
         chosen_rec = next(r for r in kommun_list if r["name"] == chosen_name)
         kommunal_tax_rate = float(chosen_rec["rate"]) / 100.0
-        st.caption(
-            f"Total kommunalskatt (kommun + region): **{chosen_rec['rate']:.2f} %**"
-        )
+        st.caption(t("sb.kommun.rate_caption").format(rate=chosen_rec["rate"]))
     else:
-        kommunal_tax_rate = st.slider("Kommunalskatt (%)", 28.0, 36.0, 30.55, 0.01) / 100
-    if st.button("🔄 Uppdatera kommunalskatt", help="Hämta senaste siffror från SCB"):
+        kommunal_tax_rate = st.slider(t("sb.kommun.manual_rate"), 28.0, 36.0, 30.55, 0.01) / 100
+    if st.button(t("sb.kommun.refresh"), help=t("sb.kommun.refresh_help")):
         try:
             records = fetch_kommunalskatt_table(year=2026)
             save_snapshot(records, KOMMUN_SNAPSHOT)
             _load_kommun_snapshot.clear()
-            st.success(f"Uppdaterat ({len(records)} poster)")
+            st.success(t("sb.kommun.refresh_success").format(n=len(records)))
             st.rerun()
         except Exception as e:
-            st.error(f"Misslyckades: {e}")
+            st.error(t("sb.kommun.refresh_fail").format(err=e))
 
-with st.sidebar.expander("🏠 Amortering", expanded=False):
+with st.sidebar.expander(t("sb.amort.header"), expanded=False):
     allow_5y = st.checkbox(
-        "Tillåt omvärdering vart 5:e år",
+        t("sb.amort.5y"),
         value=False,
-        help="Av: amorteringsgrund fryst. På: 5-års omvärdering till marknad.",
+        help=t("sb.amort.5y_help"),
     )
 
-with st.sidebar.expander("🏁 Exit (annotering)", expanded=False):
-    broker_fee = st.slider("Mäklararvode (%)", 0.0, 8.0, 4.0, 0.25) / 100
-    st.caption(
-        "Huvudvyn antar innehav till horisontens slut. "
-        "Annoteringen under tabellen visar netto om du säljer."
-    )
+with st.sidebar.expander(t("sb.exit.header"), expanded=False):
+    broker_fee = st.slider(t("sb.exit.broker_fee"), 0.0, 8.0, 4.0, 0.25) / 100
+    st.caption(t("sb.exit.caption"))
 
-with st.sidebar.expander("⚙️ Övriga inställningar", expanded=False):
-    income_growth = st.slider("Inkomstökning (%/år)", 0.0, 8.0, 3.0, 0.25) / 100
+with st.sidebar.expander(t("sb.other.header"), expanded=False):
+    income_growth = st.slider(t("sb.other.income_growth"), 0.0, 8.0, 3.0, 0.25) / 100
     liquidity_buffer = money_input(
-        "Likviditetsbuffert (kr)",
+        t("sb.other.liquidity_buffer"),
         key="liquidity_buffer_text",
         default=50_000,
         min_val=0,
@@ -263,21 +291,21 @@ with st.sidebar.expander("⚙️ Övriga inställningar", expanded=False):
 
 
 # ----------------------------------------------------------------
-# Household panel — member tabs with add/remove
+# Household panel — member tabs
 # ----------------------------------------------------------------
 
-st.title("🏠 Insatsväljare")
+st.title(t("app.title"))
 
-TAX_MODEL_LABELS = {
-    TaxModel.ISK: "ISK (1,065 % schablonskatt)",
-    TaxModel.KF: "KF (1,065 % schablonskatt)",
-    TaxModel.AF: "AF (30 % årlig realisation)",
-    TaxModel.NONE: "Ingen skatt (0 %)",
+TAX_MODEL_KEYS = {
+    TaxModel.ISK: "tax.isk",
+    TaxModel.KF: "tax.kf",
+    TaxModel.AF: "tax.af",
+    TaxModel.NONE: "tax.none",
 }
-STRATEGY_LABELS = {
-    InvestmentStrategy.SPARKONTO: "💰 Sparkonto (bankränta)",
-    InvestmentStrategy.RANTEFOND_ISK: "📈 Räntefond ISK",
-    InvestmentStrategy.ANPASSAD: "🛠 Anpassad (flera bucket)",
+STRATEGY_KEYS = {
+    InvestmentStrategy.SPARKONTO: "strategy.sparkonto",
+    InvestmentStrategy.RANTEFOND_ISK: "strategy.rantefond_isk",
+    InvestmentStrategy.ANPASSAD: "strategy.anpassad",
 }
 
 if "n_members" not in st.session_state:
@@ -287,22 +315,16 @@ if "n_members" not in st.session_state:
 def _member_defaults(i: int) -> dict:
     if i == 0:
         return {
-            "name": "Medlem 1",
+            "name": f"{t('hh.member_default_name')} 1",
             "initial_cash": 5_400_000,
             "annual_brutto_income": 900_000,
             "monthly_personal_expenses": 25_000,
-            "strategy": InvestmentStrategy.RANTEFOND_ISK.value,
-            "sparkonto_return": 2.5,
-            "rantefond_isk_return": 6.5,
         }
     return {
-        "name": f"Medlem {i + 1}",
+        "name": f"{t('hh.member_default_name')} {i + 1}",
         "initial_cash": 0,
         "annual_brutto_income": 400_000,
         "monthly_personal_expenses": 15_000,
-        "strategy": InvestmentStrategy.RANTEFOND_ISK.value,
-        "sparkonto_return": 2.5,
-        "rantefond_isk_return": 6.5,
     }
 
 
@@ -314,11 +336,10 @@ def _ensure_member_state(i: int) -> None:
     st.session_state.setdefault(
         f"m{i}_expenses_text", format_money(d["monthly_personal_expenses"])
     )
-    st.session_state.setdefault(f"m{i}_strategy", d["strategy"])
-    st.session_state.setdefault(f"m{i}_sparkonto_return", d["sparkonto_return"])
-    st.session_state.setdefault(f"m{i}_rantefond_return", d["rantefond_isk_return"])
+    st.session_state.setdefault(f"m{i}_strategy", InvestmentStrategy.RANTEFOND_ISK.value)
+    st.session_state.setdefault(f"m{i}_sparkonto_return", 2.5)
+    st.session_state.setdefault(f"m{i}_rantefond_return", 6.5)
     st.session_state.setdefault(f"m{i}_n_buckets", 1)
-    # Default first bucket: 100 % aktier ISK @ 6.5 %
     st.session_state.setdefault(f"m{i}_b0_alloc", 100)
     st.session_state.setdefault(f"m{i}_b0_return", 6.5)
     st.session_state.setdefault(f"m{i}_b0_tax", TaxModel.ISK.value)
@@ -330,14 +351,14 @@ for i in range(st.session_state.n_members):
 
 with st.container(border=True):
     hdr_col1, hdr_col2, hdr_col3 = st.columns([3, 1, 1])
-    hdr_col1.markdown("### 👪 Hushåll")
-    if hdr_col2.button("➕ Ny medlem", use_container_width=True):
+    hdr_col1.markdown(f"### {t('hh.header')}")
+    if hdr_col2.button(t("hh.add_member"), use_container_width=True):
         i = st.session_state.n_members
         _ensure_member_state(i)
         st.session_state.n_members += 1
         st.rerun()
     if hdr_col3.button(
-        "➖ Ta bort sist",
+        t("hh.remove_last"),
         use_container_width=True,
         disabled=st.session_state.n_members <= 1,
     ):
@@ -349,18 +370,18 @@ with st.container(border=True):
     for i, tab in enumerate(tabs):
         with tab:
             c1, c2 = st.columns(2)
-            c1.text_input("Namn", key=f"m{i}_name")
+            c1.text_input(t("hh.tab.name"), key=f"m{i}_name")
             c2.selectbox(
-                "Investeringsstrategi",
+                t("hh.tab.strategy"),
                 [s.value for s in InvestmentStrategy],
-                format_func=lambda v: STRATEGY_LABELS[InvestmentStrategy(v)],
+                format_func=lambda v: t(STRATEGY_KEYS[InvestmentStrategy(v)]),
                 key=f"m{i}_strategy",
             )
 
             c3, c4, c5 = st.columns(3)
             with c3:
                 money_input(
-                    "Startkapital (kr)",
+                    t("hh.tab.cash"),
                     key=f"m{i}_cash_text",
                     default=5_400_000 if i == 0 else 0,
                     min_val=0,
@@ -368,7 +389,7 @@ with st.container(border=True):
                 )
             with c4:
                 money_input(
-                    "Brutto lön (kr/år)",
+                    t("hh.tab.brutto"),
                     key=f"m{i}_brutto_text",
                     default=900_000 if i == 0 else 400_000,
                     min_val=0,
@@ -376,34 +397,31 @@ with st.container(border=True):
                 )
             with c5:
                 money_input(
-                    "Personliga utgifter (kr/mån)",
+                    t("hh.tab.expenses"),
                     key=f"m{i}_expenses_text",
                     default=25_000 if i == 0 else 15_000,
                     min_val=0,
                     max_val=500_000,
-                    help=(
-                        "Endast personlig konsumtion (mat, kläder, transport). "
-                        "Avgift + lån fördelas automatiskt proportionellt mot brutto."
-                    ),
+                    help=t("hh.tab.expenses_help"),
                 )
 
             strategy_val = st.session_state[f"m{i}_strategy"]
             if strategy_val == InvestmentStrategy.SPARKONTO.value:
                 st.slider(
-                    "Årsränta (%) — banksparkonto",
+                    t("strategy.sparkonto.rate_label"),
                     min_value=0.0, max_value=10.0, step=0.1,
                     key=f"m{i}_sparkonto_return",
                 )
             elif strategy_val == InvestmentStrategy.RANTEFOND_ISK.value:
                 st.slider(
-                    "Förväntad avkastning (%/år) — ISK-fond",
+                    t("strategy.isk.rate_label"),
                     min_value=0.0, max_value=15.0, step=0.25,
                     key=f"m{i}_rantefond_return",
                 )
             else:  # ANPASSAD
-                st.markdown("**Bucketer** (summan måste vara 100 %)")
+                st.markdown(t("anpassad.heading"))
                 bc1, bc2 = st.columns([1, 1])
-                if bc1.button(f"➕ Ny bucket", key=f"m{i}_add_bucket"):
+                if bc1.button(t("anpassad.add"), key=f"m{i}_add_bucket"):
                     j = st.session_state[f"m{i}_n_buckets"]
                     st.session_state[f"m{i}_b{j}_alloc"] = 0
                     st.session_state[f"m{i}_b{j}_return"] = 5.0
@@ -411,7 +429,7 @@ with st.container(border=True):
                     st.session_state[f"m{i}_n_buckets"] += 1
                     st.rerun()
                 if bc2.button(
-                    f"➖ Ta bort sist",
+                    t("anpassad.remove"),
                     key=f"m{i}_remove_bucket",
                     disabled=st.session_state[f"m{i}_n_buckets"] <= 1,
                 ):
@@ -422,26 +440,26 @@ with st.container(border=True):
                 for j in range(st.session_state[f"m{i}_n_buckets"]):
                     bucket_cols = st.columns([1, 1, 2])
                     bucket_cols[0].number_input(
-                        f"Bucket {j + 1} andel (%)",
+                        t("anpassad.alloc").format(j=j + 1),
                         min_value=0, max_value=100,
                         key=f"m{i}_b{j}_alloc",
                     )
                     bucket_cols[1].number_input(
-                        f"Avkastning (%/år)",
+                        t("anpassad.return"),
                         min_value=-50.0, max_value=50.0, step=0.25,
                         key=f"m{i}_b{j}_return",
                     )
                     bucket_cols[2].selectbox(
-                        "Skattemodell",
+                        t("anpassad.tax_model"),
                         [tm.value for tm in (TaxModel.ISK, TaxModel.KF, TaxModel.AF, TaxModel.NONE)],
-                        format_func=lambda v: TAX_MODEL_LABELS[TaxModel(v)],
+                        format_func=lambda v: t(TAX_MODEL_KEYS[TaxModel(v)]),
                         key=f"m{i}_b{j}_tax",
                     )
                     running_alloc += st.session_state[f"m{i}_b{j}_alloc"]
                 if abs(running_alloc - 100) > 1e-4:
-                    st.warning(f"Summan av andelarna: **{running_alloc:.1f} %** — måste vara 100 %.")
+                    st.warning(t("anpassad.sum_warning").format(total=running_alloc))
 
-            # Show computed netto preview
+            # Netto preview caption
             try:
                 brutto_val = parse_money(st.session_state[f"m{i}_brutto_text"]) or 0
                 netto_preview = compute_net_income(
@@ -449,11 +467,11 @@ with st.container(border=True):
                     kommunal_rate=kommunal_tax_rate,
                     annual_interest=0,
                 )
-                st.caption(
-                    f"Preview: brutto {format_money(netto_preview.brutto)} kr/år → "
-                    f"netto (före ränteavdrag) {format_money(netto_preview.netto)} kr/år "
-                    f"≈ {format_money(netto_preview.netto / 12)} kr/mån"
-                )
+                st.caption(t("hh.tab.netto_preview").format(
+                    brutto=format_money(netto_preview.brutto),
+                    netto=format_money(netto_preview.netto),
+                    netto_m=format_money(netto_preview.netto / 12),
+                ))
             except Exception:
                 pass
 
@@ -491,7 +509,7 @@ def _build_member_from_state(i: int) -> HouseholdMember:
 try:
     members = [_build_member_from_state(i) for i in range(st.session_state.n_members)]
 except ValueError as e:
-    st.error(f"Hushållskonfiguration ogiltig: {e}")
+    st.error(t("err.config_invalid").format(err=e))
     st.stop()
 
 
@@ -508,11 +526,10 @@ ltv_min_pct = max(0, int(round((V - insats_max_kr) / V * 100)))
 ltv_max_pct = 90
 
 if total_cash < insats_min_kr:
-    st.error(
-        f"Otillräcklig total kontantinsats: hushållet har {format_money(total_cash)} kr "
-        f"men behöver minst {format_money(insats_min_kr)} kr (10 % av köpeskilling; "
-        f"bolånetaket 2026-04-01 är 90 %)."
-    )
+    st.error(t("loan.insufficient_cash").format(
+        have=format_money(total_cash),
+        need=format_money(insats_min_kr),
+    ))
     st.stop()
 
 bounds_key = f"{V:.0f}:{total_cash:.0f}"
@@ -559,16 +576,16 @@ def _on_slider_change():
 
 
 with st.container(border=True):
-    st.markdown("### 💰 Lån")
+    st.markdown(f"### {t('loan.header')}")
 
     col_i, col_l = st.columns(2)
     col_i.text_input(
-        f"Insats (kr) — {format_money(insats_min_kr)} – {format_money(insats_max_kr)}",
+        t("loan.insats_label").format(lo=format_money(insats_min_kr), hi=format_money(insats_max_kr)),
         key="insats_text",
         on_change=_on_insats_change,
     )
     col_l.text_input(
-        f"Belåningsgrad (%) — {ltv_min_pct} – {ltv_max_pct}",
+        t("loan.ltv_label").format(lo=ltv_min_pct, hi=ltv_max_pct),
         key="ltv_text",
         on_change=_on_ltv_change,
     )
@@ -576,7 +593,7 @@ with st.container(border=True):
     if insats_max_kr > insats_min_kr:
         slider_step = max(10_000, (insats_max_kr - insats_min_kr) // 200)
         st.slider(
-            "Dra för att justera insats",
+            t("loan.slider_label"),
             min_value=insats_min_kr,
             max_value=insats_max_kr,
             step=slider_step,
@@ -586,21 +603,25 @@ with st.container(border=True):
             label_visibility="collapsed",
         )
     else:
-        st.caption(
-            f"Insats låst till {format_money(insats_min_kr)} kr (endast möjliga värdet)"
-        )
+        st.caption(t("loan.slider_locked").format(amt=format_money(insats_min_kr)))
 
     col_b, col_s = st.columns(2)
     binding_label = col_b.selectbox(
-        "Bindningstid", list(FIXATION_MONTHS.keys()), index=0,
+        t("loan.binding"), list(FIXATION_MONTHS.keys()), index=0,
     )
     binding_months = FIXATION_MONTHS[binding_label]
+
+    scenario_options = [
+        (RateScenario.LOW, t("loan.scenario.low")),
+        (RateScenario.BASE, t("loan.scenario.base")),
+        (RateScenario.HIGH, t("loan.scenario.high")),
+    ]
     scenario_label = col_s.selectbox(
-        "Räntescenario",
-        ["LOW (låg)", "BASE (basscenario)", "HIGH (hög)"],
+        t("loan.scenario"),
+        [lbl for _, lbl in scenario_options],
         index=1,
     )
-    scenario = RateScenario[scenario_label.split(" ")[0]]
+    scenario = next(sc for sc, lbl in scenario_options if lbl == scenario_label)
 
     user_insats_kr = int(st.session_state.insats_kr)
     user_ltv_pct = int(st.session_state.ltv_pct)
@@ -618,30 +639,30 @@ with st.container(border=True):
 
     col_r1, col_r2 = st.columns(2)
     col_r1.caption(
-        f"Stabelo snapshot: **{stabelo_rate:.2f} %**"
+        t("loan.stabelo_hit").format(rate=stabelo_rate)
         if stabelo_rate is not None
-        else "Stabelo: saknas för denna LTV/bindningstid"
+        else t("loan.stabelo_miss")
     )
-    col_r2.caption(f"Scenario ({scenario.value}): **{scenario_rate * 100:.2f} %**")
+    col_r2.caption(t("loan.scenario_rate").format(sc=scenario.value, rate=scenario_rate * 100))
 
     col_ch, col_btn = st.columns([3, 1])
     use_stabelo = col_ch.checkbox(
-        "Använd Stabelo snapshot-ränta (gäller Ditt val, scenario C)",
+        t("loan.use_stabelo"),
         value=stabelo_rate is not None,
         disabled=stabelo_rate is None,
     )
     rate_override = (
         stabelo_rate / 100 if (use_stabelo and stabelo_rate is not None) else None
     )
-    if col_btn.button("🔄 Uppdatera Stabelo"):
+    if col_btn.button(t("loan.refresh_stabelo")):
         try:
             new_records = fetch_rate_table()
             stabelo_save_snapshot(new_records, STABELO_SNAPSHOT)
             _load_stabelo_snapshot.clear()
-            st.success(f"Uppdaterat ({len(new_records)} poster)")
+            st.success(t("sb.kommun.refresh_success").format(n=len(new_records)))
             st.rerun()
         except Exception as e:
-            st.error(f"Misslyckades: {e}")
+            st.error(t("sb.kommun.refresh_fail").format(err=e))
 
 
 # ----------------------------------------------------------------
@@ -671,18 +692,24 @@ scenarios = _run_three_scenarios(config.model_dump_json(), int(user_insats_kr))
 
 
 # ----------------------------------------------------------------
-# Metrics table (3 × 4, held-to-end)
+# Metrics table
 # ----------------------------------------------------------------
 
-st.subheader("Slutvärden (innehav till horisontens slut)")
+st.subheader(t("metrics.header"))
 
 scenario_names = {
-    "A": f"A. Maximal insats — {format_money(scenarios['A']['insats'])} kr · "
-         f"LTV {scenarios['A']['ltv']*100:.0f} %",
-    "B": f"B. Minimal insats (10 %) — {format_money(scenarios['B']['insats'])} kr · "
-         f"LTV {scenarios['B']['ltv']*100:.0f} %",
-    "C": f"C. Ditt val — {format_money(scenarios['C']['insats'])} kr · "
-         f"LTV {scenarios['C']['ltv']*100:.0f} %",
+    "A": t("metrics.scenario_a").format(
+        insats=format_money(scenarios["A"]["insats"]),
+        ltv=scenarios["A"]["ltv"] * 100,
+    ),
+    "B": t("metrics.scenario_b").format(
+        insats=format_money(scenarios["B"]["insats"]),
+        ltv=scenarios["B"]["ltv"] * 100,
+    ),
+    "C": t("metrics.scenario_c").format(
+        insats=format_money(scenarios["C"]["insats"]),
+        ltv=scenarios["C"]["ltv"] * 100,
+    ),
 }
 
 metric_rows = []
@@ -693,22 +720,19 @@ for key in ("A", "B", "C"):
     loan = float(last["loan"])
     nw = portfolio + prop - loan
     metric_rows.append({
-        "Scenario": scenario_names[key],
-        "Portfölj (ex. bostad)": format_money(portfolio) + " kr",
-        "Bostadsvärde": format_money(prop) + " kr",
-        "Kvarvarande lån": format_money(loan) + " kr",
-        "Nettoförmögenhet": format_money(nw) + " kr",
+        t("metrics.col.scenario"): scenario_names[key],
+        t("metrics.col.portfolio"): format_money(portfolio) + " kr",
+        t("metrics.col.property"): format_money(prop) + " kr",
+        t("metrics.col.loan"): format_money(loan) + " kr",
+        t("metrics.col.net_worth"): format_money(nw) + " kr",
     })
-st.table(pd.DataFrame(metric_rows).set_index("Scenario"))
+st.table(pd.DataFrame(metric_rows).set_index(t("metrics.col.scenario")))
 
 sell_bits = " · ".join(
     f"**{k}**: {format_money(scenarios[k]['net_worth_if_sold'])} kr"
     for k in ("A", "B", "C")
 )
-st.caption(
-    f"Om du säljer bostaden vid horisontens slut "
-    f"(22 % reavinstskatt + {broker_fee*100:.1f} % mäklararvode): {sell_bits}"
-)
+st.caption(t("metrics.sell_annotation").format(broker=broker_fee * 100, bits=sell_bits))
 
 infeasible_any = any(scenarios[k]["infeasible_months"] > 0 for k in ("A", "B", "C"))
 if infeasible_any:
@@ -716,21 +740,21 @@ if infeasible_any:
         f"{k}: {scenarios[k]['infeasible_months']}"
         for k in ("A", "B", "C") if scenarios[k]['infeasible_months'] > 0
     )
-    st.warning(f"⚠️ Månader med cash flow < −likviditetsbuffert: {bits}")
+    st.warning(t("metrics.infeasible").format(bits=bits))
 
 
 # ----------------------------------------------------------------
-# Main chart: 3 net_worth curves with real-year x-axis
+# Main chart
 # ----------------------------------------------------------------
 
-st.subheader("Nettoförmögenhet över tid")
+st.subheader(t("chart.title"))
 
 colors = {"A": "#2e7d32", "B": "#c62828", "C": "#1976d2"}
 dashes = {"A": "dash", "B": "dot", "C": "solid"}
 legend_names = {
-    "A": f"A: Max insats (LTV {scenarios['A']['ltv']*100:.0f} %)",
-    "B": "B: Min insats 10 % (LTV 90 %)",
-    "C": f"C: Ditt val (LTV {scenarios['C']['ltv']*100:.0f} %)",
+    "A": t("chart.legend.a").format(ltv=scenarios["A"]["ltv"] * 100),
+    "B": t("chart.legend.b"),
+    "C": t("chart.legend.c").format(ltv=scenarios["C"]["ltv"] * 100),
 }
 
 horizon_dates = _horizon_dates(years)
@@ -749,8 +773,8 @@ for key in ("A", "B", "C"):
 
 fig.update_layout(
     height=440,
-    xaxis_title="Månad",
-    yaxis_title="Nettoförmögenhet (kr)",
+    xaxis_title=t("chart.xaxis"),
+    yaxis_title=t("chart.yaxis"),
     hovermode="x unified",
     legend=dict(orientation="h", y=-0.2),
     margin=dict(l=20, r=20, t=20, b=20),
@@ -761,10 +785,10 @@ st.plotly_chart(fig, width="stretch")
 
 
 # ----------------------------------------------------------------
-# LTV sweep comparison (retained)
+# LTV sweep
 # ----------------------------------------------------------------
 
-st.subheader("Jämförelse över LTV-val (10-procentssteg)")
+st.subheader(t("sweep.header"))
 sweep = _run_sweep(config.model_dump_json())
 sweep_display = sweep.copy()
 sweep_display["ltv"] = (
@@ -778,12 +802,12 @@ sweep_display["incremental_irr_vs_90"] = sweep_display["incremental_irr_vs_90"].
 )
 st.dataframe(
     sweep_display.rename(columns={
-        "ltv": "LTV",
-        "terminal_net_worth": "Terminal NW (kr)",
-        "infeasible_months": "Inf. mån",
-        "final_loan": "Slutlån (kr)",
-        "final_portfolio": "Slutportfölj (kr)",
-        "incremental_irr_vs_90": "Inkrementell IRR vs 90 %",
+        "ltv": t("sweep.col.ltv"),
+        "terminal_net_worth": t("sweep.col.terminal_nw"),
+        "infeasible_months": t("sweep.col.infeasible"),
+        "final_loan": t("sweep.col.final_loan"),
+        "final_portfolio": t("sweep.col.final_portfolio"),
+        "incremental_irr_vs_90": t("sweep.col.irr"),
     }),
     hide_index=True,
     width="stretch",
@@ -791,7 +815,7 @@ st.dataframe(
 
 fig_sweep = px.bar(
     sweep, x="ltv", y="terminal_net_worth",
-    labels={"ltv": "LTV", "terminal_net_worth": "Terminal nettoförmögenhet (kr)"},
+    labels={"ltv": t("sweep.chart.x"), "terminal_net_worth": t("sweep.chart.y")},
 )
 fig_sweep.update_layout(height=300, margin=dict(l=20, r=20, t=20, b=20))
 fig_sweep.update_xaxes(tickformat=".0%")
@@ -803,19 +827,19 @@ st.plotly_chart(fig_sweep, width="stretch")
 # Expanders
 # ----------------------------------------------------------------
 
-with st.expander("📊 Månadsvis kassaflöde (Ditt val)", expanded=False):
+with st.expander(t("exp.cashflow"), expanded=False):
     df_c = scenarios["C"]["df"]
     df_flow = df_c[["interest", "amortization", "avgift"]].copy()
     df_flow["datum"] = horizon_dates
     df_flow_long = df_flow.melt(
         id_vars="datum",
         value_vars=["interest", "amortization", "avgift"],
-        var_name="Post",
+        var_name=t("exp.cashflow.post"),
         value_name="kr",
     )
     fig_flow = px.area(
-        df_flow_long, x="datum", y="kr", color="Post",
-        labels={"datum": "Månad"},
+        df_flow_long, x="datum", y="kr", color=t("exp.cashflow.post"),
+        labels={"datum": t("exp.cashflow.x")},
     )
     fig_flow.update_layout(height=300, margin=dict(l=20, r=20, t=20, b=20))
     fig_flow.update_xaxes(dtick="M12", tickformat="%Y")
@@ -823,7 +847,7 @@ with st.expander("📊 Månadsvis kassaflöde (Ditt val)", expanded=False):
     st.plotly_chart(fig_flow, width="stretch")
 
 
-with st.expander("🔬 Räntekänslighet (±1 pp shock, Ditt val)", expanded=False):
+with st.expander(t("exp.rate_sens"), expanded=False):
     rows = []
     base_rate = (
         rate_override if rate_override is not None
@@ -835,19 +859,12 @@ with st.expander("🔬 Räntekänslighet (±1 pp shock, Ditt val)", expanded=Fal
         test_cfg = config.model_copy(update={"rate_override": base_rate + shock})
         test_df = simulate(test_cfg)
         rows.append({
-            "Skift (pp)": f"{shock * 100:+.0f}",
-            "Effektiv ränta": f"{test_cfg.rate_override * 100:.2f} %",
-            "Terminal NW": format_money(terminal_net_worth(test_df)) + " kr",
-            "Inf. mån": int(test_df["infeasible"].sum()),
+            t("exp.rate.shift"): f"{shock * 100:+.0f}",
+            t("exp.rate.effective"): f"{test_cfg.rate_override * 100:.2f} %",
+            t("exp.rate.terminal_nw"): format_money(terminal_net_worth(test_df)) + " kr",
+            t("exp.rate.inf_months"): int(test_df["infeasible"].sum()),
         })
     st.dataframe(pd.DataFrame(rows), hide_index=True, width="stretch")
 
 
-st.caption(
-    "Modellregler: 2026-04-01 FI-reform (LTV-tak 90 %, amortering 0/1/2 %-trappa, "
-    "avskaffat 4,5×-tillägg). ISK 2026: 300 000 kr fribelopp per person, 1,065 % på "
-    "överskott. Inkomstskatt: progressiv kommunal + 20 % statlig över skiktgränsen "
-    "643 000 kr; jobbskatteavdrag enligt Prop. 2025/26:32; ränteavdrag begränsas till "
-    "det skattebelopp som återstår efter JSA. "
-    "Se `ref/swedish-mortgage-policy-2026.md` och `ref/swedish-income-tax-2026.md`."
-)
+st.caption(t("footer.disclaimer"))
