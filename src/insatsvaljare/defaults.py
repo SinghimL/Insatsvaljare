@@ -123,6 +123,14 @@ class SimulationConfig(BaseModel):
         description="Total kommunalskatt (kommun + region) as decimal. Stockholm default.",
     )
     income_growth: float = Field(0.03, description="Applied to every member's brutto annually")
+    personal_expense_inflation: float = Field(
+        0.02,
+        description=(
+            "Annual CPI-style inflation applied to every member's "
+            "monthly_personal_expenses. Without this, real wages grow "
+            "unrealistically fast over the horizon."
+        ),
+    )
     liquidity_buffer: float = Field(50_000.0, description="Per-household infeasibility threshold")
 
     # Exit

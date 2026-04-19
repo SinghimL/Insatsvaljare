@@ -281,6 +281,11 @@ with st.sidebar.expander(t("sb.exit.header"), expanded=False):
 
 with st.sidebar.expander(t("sb.other.header"), expanded=False):
     income_growth = st.slider(t("sb.other.income_growth"), 0.0, 8.0, 3.0, 0.25) / 100
+    personal_expense_inflation = st.slider(
+        t("sb.other.expense_inflation"),
+        0.0, 6.0, 2.0, 0.25,
+        help=t("sb.other.expense_inflation_help"),
+    ) / 100
     liquidity_buffer = money_input(
         t("sb.other.liquidity_buffer"),
         key="liquidity_buffer_text",
@@ -681,6 +686,7 @@ config = SimulationConfig(
     members=members,
     kommunal_tax_rate=kommunal_tax_rate,
     income_growth=income_growth,
+    personal_expense_inflation=personal_expense_inflation,
     liquidity_buffer=float(liquidity_buffer),
     allow_5y_revaluation=allow_5y,
     sell_at_end=False,
@@ -714,19 +720,32 @@ scenario_names = {
 
 metric_rows = []
 for key in ("A", "B", "C"):
-    last = scenarios[key]["df"].iloc[-1]
+    df_s = scenarios[key]["df"]
+    last = df_s.iloc[-1]
     portfolio = float(last["portfolio"])
     prop = float(last["property_value"])
     loan = float(last["loan"])
     nw = portfolio + prop - loan
+    # Terminal-year brutto salary (last year's average month × 12)
+    terminal_brutto = float(df_s[df_s["year"] == df_s["year"].max()]["brutto_monthly"].mean()) * 12
+    avg_savings = float(df_s["savings"].mean())
+    cum_tax = float((df_s["tax_gross_monthly"] - df_s["ranteavdrag_monthly"]).sum())
+    cum_ranteavdrag = float(df_s["ranteavdrag_monthly"].sum())
     metric_rows.append({
         t("metrics.col.scenario"): scenario_names[key],
         t("metrics.col.portfolio"): format_money(portfolio) + " kr",
         t("metrics.col.property"): format_money(prop) + " kr",
         t("metrics.col.loan"): format_money(loan) + " kr",
         t("metrics.col.net_worth"): format_money(nw) + " kr",
+        t("metrics.col.terminal_brutto"): format_money(terminal_brutto) + " kr",
+        t("metrics.col.avg_savings"): format_money(avg_savings) + " kr",
+        t("metrics.col.cum_tax"): format_money(cum_tax) + " kr",
+        t("metrics.col.cum_ranteavdrag"): format_money(cum_ranteavdrag) + " kr",
     })
-st.table(pd.DataFrame(metric_rows).set_index(t("metrics.col.scenario")))
+# Transpose so scenarios are columns (3) and categories are rows (8) — easier
+# to compare one category across scenarios.
+metrics_df = pd.DataFrame(metric_rows).set_index(t("metrics.col.scenario")).T
+st.table(metrics_df)
 
 sell_bits = " · ".join(
     f"**{k}**: {format_money(scenarios[k]['net_worth_if_sold'])} kr"
@@ -827,22 +846,105 @@ st.plotly_chart(fig_sweep, width="stretch")
 # Expanders
 # ----------------------------------------------------------------
 
-with st.expander(t("exp.cashflow"), expanded=False):
+with st.expander(t("flow.header"), expanded=False):
     df_c = scenarios["C"]["df"]
-    df_flow = df_c[["interest", "amortization", "avgift"]].copy()
-    df_flow["datum"] = horizon_dates
-    df_flow_long = df_flow.melt(
-        id_vars="datum",
-        value_vars=["interest", "amortization", "avgift"],
-        var_name=t("exp.cashflow.post"),
-        value_name="kr",
+
+    # Year selector — use year numbers from df
+    year_options = sorted(df_c["year"].unique().tolist())
+    selected_year = st.selectbox(
+        t("flow.year_select"),
+        year_options,
+        index=0,
+        key="flow_year_select",
+    )
+    year_slice = df_c[df_c["year"] == selected_year]
+    avg = year_slice.mean(numeric_only=True)
+
+    brutto = float(avg["brutto_monthly"])
+    tax_gross = float(avg["tax_gross_monthly"])
+    interest_m = float(avg["interest"])
+    amort_m = float(avg["amortization"])
+    avgift_m = float(avg["avgift"])
+    personal_m = float(avg["personal_expenses_monthly"])
+    rant_m = float(avg["ranteavdrag_monthly"])
+    savings_m = float(avg["savings"])
+    to_portfolio_m = savings_m + rant_m
+
+    def _row(label_key: str, amount: float, sign: str = "−") -> dict:
+        return {
+            t("flow.category"): f"{sign} {t(label_key)}" if sign else t(label_key),
+            t("flow.amount"): format_money(amount) + " kr",
+            t("flow.share"): f"{(amount / brutto * 100):.1f} %" if brutto > 0 else "—",
+        }
+
+    flow_rows = [
+        {
+            t("flow.category"): t("flow.cat.brutto"),
+            t("flow.amount"): format_money(brutto) + " kr",
+            t("flow.share"): "100.0 %" if brutto > 0 else "—",
+        },
+        _row("flow.cat.tax_gross", tax_gross),
+        _row("flow.cat.interest", interest_m),
+        _row("flow.cat.amortization", amort_m),
+        _row("flow.cat.avgift", avgift_m),
+        _row("flow.cat.personal", personal_m),
+        _row("flow.cat.savings", savings_m, sign="="),
+        _row("flow.cat.ranteavdrag", rant_m, sign="+"),
+        _row("flow.cat.to_portfolio", to_portfolio_m, sign="="),
+    ]
+    st.table(pd.DataFrame(flow_rows).set_index(t("flow.category")))
+
+    st.caption(t("flow.inflation_note").format(
+        rate=personal_expense_inflation * 100,
+        avg_rate=avgift_inflation * 100,
+        inc_rate=income_growth * 100,
+    ))
+
+    # Stacked area chart by year (average month per year)
+    st.markdown(f"**{t('flow.chart.header')}**")
+    yearly = (
+        df_c.groupby("year")
+        .agg(
+            brutto=("brutto_monthly", "mean"),
+            tax=("tax_gross_monthly", "mean"),
+            rant=("ranteavdrag_monthly", "mean"),
+            interest=("interest", "mean"),
+            amort=("amortization", "mean"),
+            avgift=("avgift", "mean"),
+            personal=("personal_expenses_monthly", "mean"),
+            savings=("savings", "mean"),
+        )
+        .reset_index()
+    )
+    # Effective tax = gross - ranteavdrag refund; "to_portfolio" = savings + ranteavdrag
+    yearly["eff_tax"] = yearly["tax"] - yearly["rant"]
+    yearly["to_portfolio"] = yearly["savings"] + yearly["rant"]
+
+    stack_df = pd.DataFrame({
+        t("flow.chart.xaxis_year"): yearly["year"],
+        t("flow.cat.tax_gross"): yearly["eff_tax"],
+        t("flow.cat.interest"): yearly["interest"],
+        t("flow.cat.amortization"): yearly["amort"],
+        t("flow.cat.avgift"): yearly["avgift"],
+        t("flow.cat.personal"): yearly["personal"],
+        t("flow.cat.to_portfolio"): yearly["to_portfolio"],
+    })
+    stack_long = stack_df.melt(
+        id_vars=t("flow.chart.xaxis_year"),
+        var_name=t("flow.category"),
+        value_name=t("flow.chart.y"),
     )
     fig_flow = px.area(
-        df_flow_long, x="datum", y="kr", color=t("exp.cashflow.post"),
-        labels={"datum": t("exp.cashflow.x")},
+        stack_long,
+        x=t("flow.chart.xaxis_year"),
+        y=t("flow.chart.y"),
+        color=t("flow.category"),
     )
-    fig_flow.update_layout(height=300, margin=dict(l=20, r=20, t=20, b=20))
-    fig_flow.update_xaxes(dtick="M12", tickformat="%Y")
+    fig_flow.update_layout(
+        height=360,
+        margin=dict(l=20, r=20, t=20, b=20),
+        legend=dict(orientation="h", y=-0.2),
+    )
     fig_flow.update_yaxes(tickformat=",.0f")
     st.plotly_chart(fig_flow, width="stretch")
 

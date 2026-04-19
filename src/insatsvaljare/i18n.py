@@ -206,6 +206,24 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "en": "Liquidity buffer (kr)",
         "zh-TW": "流動性緩衝（kr）",
     },
+    "sb.other.expense_inflation": {
+        "sv": "Inflation på personliga utgifter (%/år)",
+        "en": "Personal-expense inflation (%/year)",
+        "zh-TW": "個人開銷年通脹（%/年）",
+    },
+    "sb.other.expense_inflation_help": {
+        "sv": (
+            "CPI-style ökning av personliga utgifter. Utan denna växer reallönen "
+            "orealistiskt snabbt över horisonten."
+        ),
+        "en": (
+            "CPI-style growth applied to personal expenses. Without it, real wages "
+            "grow unrealistically fast over the horizon."
+        ),
+        "zh-TW": (
+            "依 CPI 方式調升個人開銷。若未設定，實質薪資會不切實際地快速增長。"
+        ),
+    },
 
     # ---- Household panel ----
     "hh.header": {
@@ -507,6 +525,130 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         "sv": "Nettoförmögenhet",
         "en": "Net worth",
         "zh-TW": "淨資產",
+    },
+    "metrics.col.terminal_brutto": {
+        "sv": "Slutlig brutto (kr/år)",
+        "en": "Final gross salary (kr/year)",
+        "zh-TW": "期末稅前年薪（kr/年）",
+    },
+    "metrics.col.avg_savings": {
+        "sv": "Genomsnittligt sparande (kr/mån)",
+        "en": "Average savings (kr/month)",
+        "zh-TW": "平均每月儲蓄（kr/月）",
+    },
+    "metrics.col.cum_tax": {
+        "sv": "Total skatt över horisonten",
+        "en": "Cumulative tax over horizon",
+        "zh-TW": "期間累計繳稅",
+    },
+    "metrics.col.cum_ranteavdrag": {
+        "sv": "Total ränteavdrag-återbäring",
+        "en": "Cumulative interest-deduction refund",
+        "zh-TW": "期間累計房貸利息退稅",
+    },
+
+    # ---- Monthly cash flow overview ----
+    "flow.header": {
+        "sv": "📊 Månadsöversikt — var går pengarna?",
+        "en": "📊 Monthly overview — where does the money go?",
+        "zh-TW": "📊 月度總覽 — 錢都流向哪裡？",
+    },
+    "flow.year_select": {
+        "sv": "Visa genomsnittlig månad för år",
+        "en": "Show average month for year",
+        "zh-TW": "顯示以下年度的平均月份",
+    },
+    "flow.category": {
+        "sv": "Kategori",
+        "en": "Category",
+        "zh-TW": "類別",
+    },
+    "flow.amount": {
+        "sv": "Belopp (kr/mån)",
+        "en": "Amount (kr/month)",
+        "zh-TW": "金額（kr/月）",
+    },
+    "flow.share": {
+        "sv": "Andel av brutto",
+        "en": "Share of gross",
+        "zh-TW": "佔稅前比例",
+    },
+    "flow.cat.brutto": {
+        "sv": "Brutto lön (hushåll)",
+        "en": "Gross salary (household)",
+        "zh-TW": "稅前收入（家庭合計）",
+    },
+    "flow.cat.tax_gross": {
+        "sv": "Inkomstskatt (kommunal + statlig − jobbskatteavdrag)",
+        "en": "Income tax (municipal + state − earned-income credit)",
+        "zh-TW": "所得稅（市政稅 + 國稅 − 工作所得扣抵）",
+    },
+    "flow.cat.interest": {
+        "sv": "Bolåneränta",
+        "en": "Mortgage interest",
+        "zh-TW": "房貸利息",
+    },
+    "flow.cat.amortization": {
+        "sv": "Amortering",
+        "en": "Amortisation",
+        "zh-TW": "本金攤還",
+    },
+    "flow.cat.avgift": {
+        "sv": "Månadsavgift till brf",
+        "en": "Monthly service charge",
+        "zh-TW": "每月管理費",
+    },
+    "flow.cat.personal": {
+        "sv": "Personliga utgifter (inflationsjusterat)",
+        "en": "Personal expenses (inflation-adjusted)",
+        "zh-TW": "個人開銷（已計入通脹）",
+    },
+    "flow.cat.ranteavdrag": {
+        "sv": "Ränteavdrag-återbäring (månadsgenomsnitt)",
+        "en": "Interest-deduction refund (monthly average)",
+        "zh-TW": "房貸利息退稅（月平均）",
+    },
+    "flow.cat.savings": {
+        "sv": "Sparande från kassaflöde",
+        "en": "Savings from cash flow",
+        "zh-TW": "由現金流轉入投資",
+    },
+    "flow.cat.to_portfolio": {
+        "sv": "Totalt till portfölj (= sparande + ränteavdrag)",
+        "en": "Total to portfolio (= savings + interest deduction)",
+        "zh-TW": "轉入投資合計（儲蓄 + 退稅）",
+    },
+    "flow.chart.header": {
+        "sv": "Kategorifördelning över tid (genomsnittlig månad per år)",
+        "en": "Category breakdown over time (average month per year)",
+        "zh-TW": "類別結構隨時間變化（每年平均月份）",
+    },
+    "flow.chart.y": {
+        "sv": "kr/mån",
+        "en": "kr/month",
+        "zh-TW": "kr/月",
+    },
+    "flow.chart.xaxis_year": {
+        "sv": "År",
+        "en": "Year",
+        "zh-TW": "年度",
+    },
+    "flow.inflation_note": {
+        "sv": (
+            "Personliga utgifter växer {rate:.1f} %/år. Bolåneavgift växer "
+            "{avg_rate:.1f} %/år. Brutto växer {inc_rate:.1f} %/år. Alla "
+            "belopp är nominella (inte inflationsjusterade tillbaka till "
+            "dagens kronor)."
+        ),
+        "en": (
+            "Personal expenses grow at {rate:.1f} %/year; service charge at "
+            "{avg_rate:.1f} %/year; gross income at {inc_rate:.1f} %/year. All "
+            "amounts are nominal (not deflated back to today's kr)."
+        ),
+        "zh-TW": (
+            "個人開銷年增 {rate:.1f} %；管理費年增 {avg_rate:.1f} %；"
+            "稅前收入年增 {inc_rate:.1f} %。所有金額為名目值（未折算為今日 kr）。"
+        ),
     },
     "metrics.sell_annotation": {
         "sv": (

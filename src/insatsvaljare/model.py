@@ -213,6 +213,29 @@ def simulate(
         _member_monthly_netto_for_year(m.brutto_income_annual) for m in members
     ]
 
+    # Estimate each year's ränteavdrag refund for UI display (amortised across 12 months).
+    # Actual year-end reconciliation uses the precise interest_share_ytd; this estimate
+    # is just a forward-looking figure so the monthly-overview chart has a value to show.
+    def _estimate_ranteavdrag_monthly(loan_now: float, rate_now: float) -> float:
+        total_brutto = sum(m.brutto_income_annual for m in members)
+        total = 0.0
+        for m in members:
+            share = (
+                m.brutto_income_annual / total_brutto
+                if total_brutto > 0
+                else 1.0 / len(members)
+            )
+            est_interest = loan_now * rate_now * share
+            br = compute_net_income(
+                brutto=m.brutto_income_annual,
+                kommunal_rate=config.kommunal_tax_rate,
+                annual_interest=est_interest,
+            )
+            total += br.ranteavdrag_actual
+        return total / 12.0
+
+    ranteavdrag_monthly_est = _estimate_ranteavdrag_monthly(L, rate_path[0])
+
     rows: list[dict] = []
 
     for t in range(n_months):
@@ -240,7 +263,11 @@ def simulate(
 
         household_cash_flow = 0.0
         household_savings = 0.0
+        household_brutto_m = 0.0
+        household_netto_before_rant_m = 0.0
+        household_personal_m = 0.0
         any_infeasible = False
+        personal_inflation_factor = (1 + config.personal_expense_inflation) ** year
 
         for i, mr in enumerate(members):
             brutto_share = (
@@ -252,14 +279,18 @@ def simulate(
             mr.interest_share_ytd += interest_m * brutto_share
 
             income_m = monthly_netto[i]
+            current_personal = mr.personal_expenses_monthly * personal_inflation_factor
             cash_flow = (
                 income_m
-                - mr.personal_expenses_monthly
+                - current_personal
                 - shared_cost_share
             )
             if cash_flow < -config.liquidity_buffer:
                 any_infeasible = True
             household_cash_flow += cash_flow
+            household_brutto_m += mr.brutto_income_annual / 12.0
+            household_netto_before_rant_m += income_m
+            household_personal_m += current_personal
 
             savings = max(0.0, cash_flow)
             household_savings += savings
@@ -318,11 +349,16 @@ def simulate(
                 amort_basis_V = V
                 amort_basis_L0 = L
 
+            # Refresh the display estimate with the new year's loan + rate
+            next_rate = rate_path[min(t + 1, n_months - 1)]
+            ranteavdrag_monthly_est = _estimate_ranteavdrag_monthly(L, next_rate)
+
             # Reset annual tracker
             interest_ytd_total = 0.0
 
         portfolio_total = sum(b.value for mr in members for b in mr.buckets)
         house_equity = V - L
+        tax_gross_m = household_brutto_m - household_netto_before_rant_m
         rows.append({
             "month": t + 1,
             "year": year + 1,
@@ -336,6 +372,10 @@ def simulate(
             "cash_flow": household_cash_flow,
             "savings": household_savings,
             "rate": rate,
+            "brutto_monthly": household_brutto_m,
+            "tax_gross_monthly": tax_gross_m,
+            "ranteavdrag_monthly": ranteavdrag_monthly_est,
+            "personal_expenses_monthly": household_personal_m,
             "ltv_amort": ltv_amort,
             "ltv_market": ltv_market,
             "house_equity": house_equity,
