@@ -849,12 +849,19 @@ st.plotly_chart(fig_sweep, width="stretch")
 with st.expander(t("flow.header"), expanded=False):
     df_c = scenarios["C"]["df"]
 
-    # Year selector — use year numbers from df
+    # Year selector — label each ownership-year by the calendar year it starts in
+    # (year=1 is the first 12 months from today, dominantly 2026 if we're there now).
+    start_calendar_year = int(horizon_dates[0].year)
     year_options = sorted(df_c["year"].unique().tolist())
+
+    def _year_label(year_num: int) -> str:
+        return str(start_calendar_year + year_num - 1)
+
     selected_year = st.selectbox(
         t("flow.year_select"),
         year_options,
         index=0,
+        format_func=_year_label,
         key="flow_year_select",
     )
     year_slice = df_c[df_c["year"] == selected_year]
@@ -900,51 +907,35 @@ with st.expander(t("flow.header"), expanded=False):
         inc_rate=income_growth * 100,
     ))
 
-    # Stacked area chart by year (average month per year)
+    # Stacked area chart — monthly granularity on a calendar x-axis
     st.markdown(f"**{t('flow.chart.header')}**")
-    yearly = (
-        df_c.groupby("year")
-        .agg(
-            brutto=("brutto_monthly", "mean"),
-            tax=("tax_gross_monthly", "mean"),
-            rant=("ranteavdrag_monthly", "mean"),
-            interest=("interest", "mean"),
-            amort=("amortization", "mean"),
-            avgift=("avgift", "mean"),
-            personal=("personal_expenses_monthly", "mean"),
-            savings=("savings", "mean"),
-        )
-        .reset_index()
-    )
-    # Effective tax = gross - ranteavdrag refund; "to_portfolio" = savings + ranteavdrag
-    yearly["eff_tax"] = yearly["tax"] - yearly["rant"]
-    yearly["to_portfolio"] = yearly["savings"] + yearly["rant"]
-
-    stack_df = pd.DataFrame({
-        t("flow.chart.xaxis_year"): yearly["year"],
-        t("flow.cat.tax_gross"): yearly["eff_tax"],
-        t("flow.cat.interest"): yearly["interest"],
-        t("flow.cat.amortization"): yearly["amort"],
-        t("flow.cat.avgift"): yearly["avgift"],
-        t("flow.cat.personal"): yearly["personal"],
-        t("flow.cat.to_portfolio"): yearly["to_portfolio"],
+    monthly = pd.DataFrame({
+        "datum": horizon_dates,
+        t("flow.cat.tax_gross"): df_c["tax_gross_monthly"].values - df_c["ranteavdrag_monthly"].values,
+        t("flow.cat.interest"): df_c["interest"].values,
+        t("flow.cat.amortization"): df_c["amortization"].values,
+        t("flow.cat.avgift"): df_c["avgift"].values,
+        t("flow.cat.personal"): df_c["personal_expenses_monthly"].values,
+        t("flow.cat.to_portfolio"): df_c["savings"].values + df_c["ranteavdrag_monthly"].values,
     })
-    stack_long = stack_df.melt(
-        id_vars=t("flow.chart.xaxis_year"),
+    stack_long = monthly.melt(
+        id_vars="datum",
         var_name=t("flow.category"),
         value_name=t("flow.chart.y"),
     )
     fig_flow = px.area(
         stack_long,
-        x=t("flow.chart.xaxis_year"),
+        x="datum",
         y=t("flow.chart.y"),
         color=t("flow.category"),
+        labels={"datum": t("chart.xaxis")},
     )
     fig_flow.update_layout(
         height=360,
         margin=dict(l=20, r=20, t=20, b=20),
         legend=dict(orientation="h", y=-0.2),
     )
+    fig_flow.update_xaxes(dtick="M12", tickformat="%Y")
     fig_flow.update_yaxes(tickformat=",.0f")
     st.plotly_chart(fig_flow, width="stretch")
 
