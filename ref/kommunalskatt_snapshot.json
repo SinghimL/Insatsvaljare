@@ -1,0 +1,2190 @@
+{
+  "fetched_at": "2026-04-19T16:41:18.429060+00:00",
+  "source": "https://api.scb.se/OV0104/v1/doris/sv/ssd/OE/OE0101/Kommunalskatter2000",
+  "records": [
+    {
+      "code": "1440",
+      "name": "Ale",
+      "level": "kommun",
+      "rate": 32.8,
+      "year": 2026
+    },
+    {
+      "code": "1489",
+      "name": "Alingsås",
+      "level": "kommun",
+      "rate": 32.84,
+      "year": 2026
+    },
+    {
+      "code": "0764",
+      "name": "Alvesta",
+      "level": "kommun",
+      "rate": 33.42,
+      "year": 2026
+    },
+    {
+      "code": "0604",
+      "name": "Aneby",
+      "level": "kommun",
+      "rate": 33.85,
+      "year": 2026
+    },
+    {
+      "code": "1984",
+      "name": "Arboga",
+      "level": "kommun",
+      "rate": 33.29,
+      "year": 2026
+    },
+    {
+      "code": "2506",
+      "name": "Arjeplog",
+      "level": "kommun",
+      "rate": 34.84,
+      "year": 2026
+    },
+    {
+      "code": "2505",
+      "name": "Arvidsjaur",
+      "level": "kommun",
+      "rate": 34.14,
+      "year": 2026
+    },
+    {
+      "code": "1784",
+      "name": "Arvika",
+      "level": "kommun",
+      "rate": 34.03,
+      "year": 2026
+    },
+    {
+      "code": "1882",
+      "name": "Askersund",
+      "level": "kommun",
+      "rate": 34.15,
+      "year": 2026
+    },
+    {
+      "code": "2084",
+      "name": "Avesta",
+      "level": "kommun",
+      "rate": 33.95,
+      "year": 2026
+    },
+    {
+      "code": "1460",
+      "name": "Bengtsfors",
+      "level": "kommun",
+      "rate": 34.4,
+      "year": 2026
+    },
+    {
+      "code": "2326",
+      "name": "Berg",
+      "level": "kommun",
+      "rate": 34.22,
+      "year": 2026
+    },
+    {
+      "code": "2403",
+      "name": "Bjurholm",
+      "level": "kommun",
+      "rate": 35.0,
+      "year": 2026
+    },
+    {
+      "code": "1260",
+      "name": "Bjuv",
+      "level": "kommun",
+      "rate": 32.17,
+      "year": 2026
+    },
+    {
+      "code": "2582",
+      "name": "Boden",
+      "level": "kommun",
+      "rate": 33.94,
+      "year": 2026
+    },
+    {
+      "code": "1443",
+      "name": "Bollebygd",
+      "level": "kommun",
+      "rate": 33.07,
+      "year": 2026
+    },
+    {
+      "code": "2183",
+      "name": "Bollnäs",
+      "level": "kommun",
+      "rate": 33.37,
+      "year": 2026
+    },
+    {
+      "code": "0885",
+      "name": "Borgholm",
+      "level": "kommun",
+      "rate": 33.44,
+      "year": 2026
+    },
+    {
+      "code": "2081",
+      "name": "Borlänge",
+      "level": "kommun",
+      "rate": 34.4,
+      "year": 2026
+    },
+    {
+      "code": "1490",
+      "name": "Borås",
+      "level": "kommun",
+      "rate": 32.79,
+      "year": 2026
+    },
+    {
+      "code": "0127",
+      "name": "Botkyrka",
+      "level": "kommun",
+      "rate": 32.23,
+      "year": 2026
+    },
+    {
+      "code": "0560",
+      "name": "Boxholm",
+      "level": "kommun",
+      "rate": 33.37,
+      "year": 2026
+    },
+    {
+      "code": "1272",
+      "name": "Bromölla",
+      "level": "kommun",
+      "rate": 33.74,
+      "year": 2026
+    },
+    {
+      "code": "2305",
+      "name": "Bräcke",
+      "level": "kommun",
+      "rate": 35.09,
+      "year": 2026
+    },
+    {
+      "code": "1231",
+      "name": "Burlöv",
+      "level": "kommun",
+      "rate": 31.27,
+      "year": 2026
+    },
+    {
+      "code": "1278",
+      "name": "Båstad",
+      "level": "kommun",
+      "rate": 31.41,
+      "year": 2026
+    },
+    {
+      "code": "1438",
+      "name": "Dals-Ed",
+      "level": "kommun",
+      "rate": 34.69,
+      "year": 2026
+    },
+    {
+      "code": "0162",
+      "name": "Danderyd",
+      "level": "kommun",
+      "rate": 30.58,
+      "year": 2026
+    },
+    {
+      "code": "1862",
+      "name": "Degerfors",
+      "level": "kommun",
+      "rate": 35.3,
+      "year": 2026
+    },
+    {
+      "code": "2425",
+      "name": "Dorotea",
+      "level": "kommun",
+      "rate": 35.65,
+      "year": 2026
+    },
+    {
+      "code": "1730",
+      "name": "Eda",
+      "level": "kommun",
+      "rate": 34.55,
+      "year": 2026
+    },
+    {
+      "code": "0125",
+      "name": "Ekerö",
+      "level": "kommun",
+      "rate": 31.45,
+      "year": 2026
+    },
+    {
+      "code": "0686",
+      "name": "Eksjö",
+      "level": "kommun",
+      "rate": 34.02,
+      "year": 2026
+    },
+    {
+      "code": "0862",
+      "name": "Emmaboda",
+      "level": "kommun",
+      "rate": 33.82,
+      "year": 2026
+    },
+    {
+      "code": "0381",
+      "name": "Enköping",
+      "level": "kommun",
+      "rate": 33.05,
+      "year": 2026
+    },
+    {
+      "code": "0484",
+      "name": "Eskilstuna",
+      "level": "kommun",
+      "rate": 32.85,
+      "year": 2026
+    },
+    {
+      "code": "1285",
+      "name": "Eslöv",
+      "level": "kommun",
+      "rate": 31.72,
+      "year": 2026
+    },
+    {
+      "code": "1445",
+      "name": "Essunga",
+      "level": "kommun",
+      "rate": 33.05,
+      "year": 2026
+    },
+    {
+      "code": "1982",
+      "name": "Fagersta",
+      "level": "kommun",
+      "rate": 32.99,
+      "year": 2026
+    },
+    {
+      "code": "1382",
+      "name": "Falkenberg",
+      "level": "kommun",
+      "rate": 32.5,
+      "year": 2026
+    },
+    {
+      "code": "1499",
+      "name": "Falköping",
+      "level": "kommun",
+      "rate": 33.43,
+      "year": 2026
+    },
+    {
+      "code": "2080",
+      "name": "Falun",
+      "level": "kommun",
+      "rate": 34.05,
+      "year": 2026
+    },
+    {
+      "code": "1782",
+      "name": "Filipstad",
+      "level": "kommun",
+      "rate": 34.55,
+      "year": 2026
+    },
+    {
+      "code": "0562",
+      "name": "Finspång",
+      "level": "kommun",
+      "rate": 33.7,
+      "year": 2026
+    },
+    {
+      "code": "0482",
+      "name": "Flen",
+      "level": "kommun",
+      "rate": 33.1,
+      "year": 2026
+    },
+    {
+      "code": "1763",
+      "name": "Forshaga",
+      "level": "kommun",
+      "rate": 34.63,
+      "year": 2026
+    },
+    {
+      "code": "1439",
+      "name": "Färgelanda",
+      "level": "kommun",
+      "rate": 34.39,
+      "year": 2026
+    },
+    {
+      "code": "2026",
+      "name": "Gagnef",
+      "level": "kommun",
+      "rate": 34.27,
+      "year": 2026
+    },
+    {
+      "code": "0662",
+      "name": "Gislaved",
+      "level": "kommun",
+      "rate": 33.75,
+      "year": 2026
+    },
+    {
+      "code": "0461",
+      "name": "Gnesta",
+      "level": "kommun",
+      "rate": 32.95,
+      "year": 2026
+    },
+    {
+      "code": "0617",
+      "name": "Gnosjö",
+      "level": "kommun",
+      "rate": 34.0,
+      "year": 2026
+    },
+    {
+      "code": "0980",
+      "name": "Gotland",
+      "level": "kommun",
+      "rate": 33.6,
+      "year": 2026
+    },
+    {
+      "code": "1764",
+      "name": "Grums",
+      "level": "kommun",
+      "rate": 34.78,
+      "year": 2026
+    },
+    {
+      "code": "1444",
+      "name": "Grästorp",
+      "level": "kommun",
+      "rate": 33.47,
+      "year": 2026
+    },
+    {
+      "code": "1447",
+      "name": "Gullspång",
+      "level": "kommun",
+      "rate": 33.97,
+      "year": 2026
+    },
+    {
+      "code": "2523",
+      "name": "Gällivare",
+      "level": "kommun",
+      "rate": 33.89,
+      "year": 2026
+    },
+    {
+      "code": "2180",
+      "name": "Gävle",
+      "level": "kommun",
+      "rate": 33.77,
+      "year": 2026
+    },
+    {
+      "code": "1480",
+      "name": "Göteborg",
+      "level": "kommun",
+      "rate": 32.6,
+      "year": 2026
+    },
+    {
+      "code": "1471",
+      "name": "Götene",
+      "level": "kommun",
+      "rate": 33.6,
+      "year": 2026
+    },
+    {
+      "code": "0643",
+      "name": "Habo",
+      "level": "kommun",
+      "rate": 33.93,
+      "year": 2026
+    },
+    {
+      "code": "1783",
+      "name": "Hagfors",
+      "level": "kommun",
+      "rate": 34.3,
+      "year": 2026
+    },
+    {
+      "code": "1861",
+      "name": "Hallsberg",
+      "level": "kommun",
+      "rate": 33.85,
+      "year": 2026
+    },
+    {
+      "code": "1961",
+      "name": "Hallstahammar",
+      "level": "kommun",
+      "rate": 32.69,
+      "year": 2026
+    },
+    {
+      "code": "1380",
+      "name": "Halmstad",
+      "level": "kommun",
+      "rate": 32.38,
+      "year": 2026
+    },
+    {
+      "code": "1761",
+      "name": "Hammarö",
+      "level": "kommun",
+      "rate": 35.05,
+      "year": 2026
+    },
+    {
+      "code": "0136",
+      "name": "Haninge",
+      "level": "kommun",
+      "rate": 31.28,
+      "year": 2026
+    },
+    {
+      "code": "2583",
+      "name": "Haparanda",
+      "level": "kommun",
+      "rate": 33.84,
+      "year": 2026
+    },
+    {
+      "code": "0331",
+      "name": "Heby",
+      "level": "kommun",
+      "rate": 34.21,
+      "year": 2026
+    },
+    {
+      "code": "2083",
+      "name": "Hedemora",
+      "level": "kommun",
+      "rate": 34.15,
+      "year": 2026
+    },
+    {
+      "code": "1283",
+      "name": "Helsingborg",
+      "level": "kommun",
+      "rate": 31.39,
+      "year": 2026
+    },
+    {
+      "code": "1466",
+      "name": "Herrljunga",
+      "level": "kommun",
+      "rate": 33.62,
+      "year": 2026
+    },
+    {
+      "code": "1497",
+      "name": "Hjo",
+      "level": "kommun",
+      "rate": 33.48,
+      "year": 2026
+    },
+    {
+      "code": "2104",
+      "name": "Hofors",
+      "level": "kommun",
+      "rate": 34.37,
+      "year": 2026
+    },
+    {
+      "code": "0126",
+      "name": "Huddinge",
+      "level": "kommun",
+      "rate": 31.71,
+      "year": 2026
+    },
+    {
+      "code": "2184",
+      "name": "Hudiksvall",
+      "level": "kommun",
+      "rate": 33.12,
+      "year": 2026
+    },
+    {
+      "code": "0860",
+      "name": "Hultsfred",
+      "level": "kommun",
+      "rate": 33.77,
+      "year": 2026
+    },
+    {
+      "code": "1315",
+      "name": "Hylte",
+      "level": "kommun",
+      "rate": 33.85,
+      "year": 2026
+    },
+    {
+      "code": "1863",
+      "name": "Hällefors",
+      "level": "kommun",
+      "rate": 34.35,
+      "year": 2026
+    },
+    {
+      "code": "2361",
+      "name": "Härjedalen",
+      "level": "kommun",
+      "rate": 34.17,
+      "year": 2026
+    },
+    {
+      "code": "2280",
+      "name": "Härnösand",
+      "level": "kommun",
+      "rate": 34.63,
+      "year": 2026
+    },
+    {
+      "code": "1401",
+      "name": "Härryda",
+      "level": "kommun",
+      "rate": 31.98,
+      "year": 2026
+    },
+    {
+      "code": "1293",
+      "name": "Hässleholm",
+      "level": "kommun",
+      "rate": 32.38,
+      "year": 2026
+    },
+    {
+      "code": "0305",
+      "name": "Håbo",
+      "level": "kommun",
+      "rate": 33.3,
+      "year": 2026
+    },
+    {
+      "code": "1284",
+      "name": "Höganäs",
+      "level": "kommun",
+      "rate": 30.91,
+      "year": 2026
+    },
+    {
+      "code": "0821",
+      "name": "Högsby",
+      "level": "kommun",
+      "rate": 34.07,
+      "year": 2026
+    },
+    {
+      "code": "1266",
+      "name": "Hörby",
+      "level": "kommun",
+      "rate": 32.26,
+      "year": 2026
+    },
+    {
+      "code": "1267",
+      "name": "Höör",
+      "level": "kommun",
+      "rate": 32.63,
+      "year": 2026
+    },
+    {
+      "code": "2510",
+      "name": "Jokkmokk",
+      "level": "kommun",
+      "rate": 34.29,
+      "year": 2026
+    },
+    {
+      "code": "0123",
+      "name": "Järfälla",
+      "level": "kommun",
+      "rate": 31.52,
+      "year": 2026
+    },
+    {
+      "code": "0680",
+      "name": "Jönköping",
+      "level": "kommun",
+      "rate": 33.4,
+      "year": 2026
+    },
+    {
+      "code": "2514",
+      "name": "Kalix",
+      "level": "kommun",
+      "rate": 33.89,
+      "year": 2026
+    },
+    {
+      "code": "0880",
+      "name": "Kalmar",
+      "level": "kommun",
+      "rate": 33.67,
+      "year": 2026
+    },
+    {
+      "code": "1446",
+      "name": "Karlsborg",
+      "level": "kommun",
+      "rate": 32.8,
+      "year": 2026
+    },
+    {
+      "code": "1082",
+      "name": "Karlshamn",
+      "level": "kommun",
+      "rate": 33.8,
+      "year": 2026
+    },
+    {
+      "code": "1883",
+      "name": "Karlskoga",
+      "level": "kommun",
+      "rate": 34.3,
+      "year": 2026
+    },
+    {
+      "code": "1080",
+      "name": "Karlskrona",
+      "level": "kommun",
+      "rate": 33.69,
+      "year": 2026
+    },
+    {
+      "code": "1780",
+      "name": "Karlstad",
+      "level": "kommun",
+      "rate": 33.55,
+      "year": 2026
+    },
+    {
+      "code": "0483",
+      "name": "Katrineholm",
+      "level": "kommun",
+      "rate": 32.95,
+      "year": 2026
+    },
+    {
+      "code": "1715",
+      "name": "Kil",
+      "level": "kommun",
+      "rate": 34.63,
+      "year": 2026
+    },
+    {
+      "code": "0513",
+      "name": "Kinda",
+      "level": "kommun",
+      "rate": 33.0,
+      "year": 2026
+    },
+    {
+      "code": "2584",
+      "name": "Kiruna",
+      "level": "kommun",
+      "rate": 34.39,
+      "year": 2026
+    },
+    {
+      "code": "1276",
+      "name": "Klippan",
+      "level": "kommun",
+      "rate": 31.93,
+      "year": 2026
+    },
+    {
+      "code": "0330",
+      "name": "Knivsta",
+      "level": "kommun",
+      "rate": 32.62,
+      "year": 2026
+    },
+    {
+      "code": "2282",
+      "name": "Kramfors",
+      "level": "kommun",
+      "rate": 34.43,
+      "year": 2026
+    },
+    {
+      "code": "1290",
+      "name": "Kristianstad",
+      "level": "kommun",
+      "rate": 32.64,
+      "year": 2026
+    },
+    {
+      "code": "1781",
+      "name": "Kristinehamn",
+      "level": "kommun",
+      "rate": 34.25,
+      "year": 2026
+    },
+    {
+      "code": "2309",
+      "name": "Krokom",
+      "level": "kommun",
+      "rate": 33.87,
+      "year": 2026
+    },
+    {
+      "code": "1881",
+      "name": "Kumla",
+      "level": "kommun",
+      "rate": 33.84,
+      "year": 2026
+    },
+    {
+      "code": "1384",
+      "name": "Kungsbacka",
+      "level": "kommun",
+      "rate": 32.58,
+      "year": 2026
+    },
+    {
+      "code": "1960",
+      "name": "Kungsör",
+      "level": "kommun",
+      "rate": 32.91,
+      "year": 2026
+    },
+    {
+      "code": "1482",
+      "name": "Kungälv",
+      "level": "kommun",
+      "rate": 32.92,
+      "year": 2026
+    },
+    {
+      "code": "1261",
+      "name": "Kävlinge",
+      "level": "kommun",
+      "rate": 29.59,
+      "year": 2026
+    },
+    {
+      "code": "1983",
+      "name": "Köping",
+      "level": "kommun",
+      "rate": 33.04,
+      "year": 2026
+    },
+    {
+      "code": "1381",
+      "name": "Laholm",
+      "level": "kommun",
+      "rate": 32.8,
+      "year": 2026
+    },
+    {
+      "code": "1282",
+      "name": "Landskrona",
+      "level": "kommun",
+      "rate": 31.42,
+      "year": 2026
+    },
+    {
+      "code": "1860",
+      "name": "Laxå",
+      "level": "kommun",
+      "rate": 35.0,
+      "year": 2026
+    },
+    {
+      "code": "1814",
+      "name": "Lekeberg",
+      "level": "kommun",
+      "rate": 33.73,
+      "year": 2026
+    },
+    {
+      "code": "2029",
+      "name": "Leksand",
+      "level": "kommun",
+      "rate": 33.8,
+      "year": 2026
+    },
+    {
+      "code": "1441",
+      "name": "Lerum",
+      "level": "kommun",
+      "rate": 32.03,
+      "year": 2026
+    },
+    {
+      "code": "0761",
+      "name": "Lessebo",
+      "level": "kommun",
+      "rate": 33.81,
+      "year": 2026
+    },
+    {
+      "code": "0186",
+      "name": "Lidingö",
+      "level": "kommun",
+      "rate": 29.67,
+      "year": 2026
+    },
+    {
+      "code": "1494",
+      "name": "Lidköping",
+      "level": "kommun",
+      "rate": 32.74,
+      "year": 2026
+    },
+    {
+      "code": "1462",
+      "name": "Lilla Edet",
+      "level": "kommun",
+      "rate": 33.85,
+      "year": 2026
+    },
+    {
+      "code": "1885",
+      "name": "Lindesberg",
+      "level": "kommun",
+      "rate": 34.6,
+      "year": 2026
+    },
+    {
+      "code": "0580",
+      "name": "Linköping",
+      "level": "kommun",
+      "rate": 31.75,
+      "year": 2026
+    },
+    {
+      "code": "0781",
+      "name": "Ljungby",
+      "level": "kommun",
+      "rate": 33.07,
+      "year": 2026
+    },
+    {
+      "code": "2161",
+      "name": "Ljusdal",
+      "level": "kommun",
+      "rate": 33.87,
+      "year": 2026
+    },
+    {
+      "code": "1864",
+      "name": "Ljusnarsberg",
+      "level": "kommun",
+      "rate": 33.8,
+      "year": 2026
+    },
+    {
+      "code": "1262",
+      "name": "Lomma",
+      "level": "kommun",
+      "rate": 30.72,
+      "year": 2026
+    },
+    {
+      "code": "2085",
+      "name": "Ludvika",
+      "level": "kommun",
+      "rate": 34.05,
+      "year": 2026
+    },
+    {
+      "code": "2580",
+      "name": "Luleå",
+      "level": "kommun",
+      "rate": 33.84,
+      "year": 2026
+    },
+    {
+      "code": "1281",
+      "name": "Lund",
+      "level": "kommun",
+      "rate": 32.42,
+      "year": 2026
+    },
+    {
+      "code": "2481",
+      "name": "Lycksele",
+      "level": "kommun",
+      "rate": 34.9,
+      "year": 2026
+    },
+    {
+      "code": "1484",
+      "name": "Lysekil",
+      "level": "kommun",
+      "rate": 33.94,
+      "year": 2026
+    },
+    {
+      "code": "1280",
+      "name": "Malmö",
+      "level": "kommun",
+      "rate": 32.42,
+      "year": 2026
+    },
+    {
+      "code": "2023",
+      "name": "Malung-Sälen",
+      "level": "kommun",
+      "rate": 34.45,
+      "year": 2026
+    },
+    {
+      "code": "2418",
+      "name": "Malå",
+      "level": "kommun",
+      "rate": 35.2,
+      "year": 2026
+    },
+    {
+      "code": "1493",
+      "name": "Mariestad",
+      "level": "kommun",
+      "rate": 32.74,
+      "year": 2026
+    },
+    {
+      "code": "1463",
+      "name": "Mark",
+      "level": "kommun",
+      "rate": 32.99,
+      "year": 2026
+    },
+    {
+      "code": "0767",
+      "name": "Markaryd",
+      "level": "kommun",
+      "rate": 33.31,
+      "year": 2026
+    },
+    {
+      "code": "1461",
+      "name": "Mellerud",
+      "level": "kommun",
+      "rate": 34.08,
+      "year": 2026
+    },
+    {
+      "code": "0586",
+      "name": "Mjölby",
+      "level": "kommun",
+      "rate": 33.45,
+      "year": 2026
+    },
+    {
+      "code": "2062",
+      "name": "Mora",
+      "level": "kommun",
+      "rate": 34.32,
+      "year": 2026
+    },
+    {
+      "code": "0583",
+      "name": "Motala",
+      "level": "kommun",
+      "rate": 33.25,
+      "year": 2026
+    },
+    {
+      "code": "0642",
+      "name": "Mullsjö",
+      "level": "kommun",
+      "rate": 34.1,
+      "year": 2026
+    },
+    {
+      "code": "1430",
+      "name": "Munkedal",
+      "level": "kommun",
+      "rate": 34.86,
+      "year": 2026
+    },
+    {
+      "code": "1762",
+      "name": "Munkfors",
+      "level": "kommun",
+      "rate": 34.3,
+      "year": 2026
+    },
+    {
+      "code": "1481",
+      "name": "Mölndal",
+      "level": "kommun",
+      "rate": 31.99,
+      "year": 2026
+    },
+    {
+      "code": "0861",
+      "name": "Mönsterås",
+      "level": "kommun",
+      "rate": 34.07,
+      "year": 2026
+    },
+    {
+      "code": "0840",
+      "name": "Mörbylånga",
+      "level": "kommun",
+      "rate": 34.07,
+      "year": 2026
+    },
+    {
+      "code": "0182",
+      "name": "Nacka",
+      "level": "kommun",
+      "rate": 30.11,
+      "year": 2026
+    },
+    {
+      "code": "1884",
+      "name": "Nora",
+      "level": "kommun",
+      "rate": 34.55,
+      "year": 2026
+    },
+    {
+      "code": "1962",
+      "name": "Norberg",
+      "level": "kommun",
+      "rate": 33.54,
+      "year": 2026
+    },
+    {
+      "code": "2132",
+      "name": "Nordanstig",
+      "level": "kommun",
+      "rate": 34.02,
+      "year": 2026
+    },
+    {
+      "code": "2401",
+      "name": "Nordmaling",
+      "level": "kommun",
+      "rate": 35.1,
+      "year": 2026
+    },
+    {
+      "code": "0581",
+      "name": "Norrköping",
+      "level": "kommun",
+      "rate": 33.3,
+      "year": 2026
+    },
+    {
+      "code": "0188",
+      "name": "Norrtälje",
+      "level": "kommun",
+      "rate": 32.05,
+      "year": 2026
+    },
+    {
+      "code": "2417",
+      "name": "Norsjö",
+      "level": "kommun",
+      "rate": 35.2,
+      "year": 2026
+    },
+    {
+      "code": "0881",
+      "name": "Nybro",
+      "level": "kommun",
+      "rate": 34.19,
+      "year": 2026
+    },
+    {
+      "code": "0140",
+      "name": "Nykvarn",
+      "level": "kommun",
+      "rate": 32.3,
+      "year": 2026
+    },
+    {
+      "code": "0480",
+      "name": "Nyköping",
+      "level": "kommun",
+      "rate": 32.25,
+      "year": 2026
+    },
+    {
+      "code": "0192",
+      "name": "Nynäshamn",
+      "level": "kommun",
+      "rate": 32.18,
+      "year": 2026
+    },
+    {
+      "code": "0682",
+      "name": "Nässjö",
+      "level": "kommun",
+      "rate": 34.3,
+      "year": 2026
+    },
+    {
+      "code": "2101",
+      "name": "Ockelbo",
+      "level": "kommun",
+      "rate": 34.27,
+      "year": 2026
+    },
+    {
+      "code": "1060",
+      "name": "Olofström",
+      "level": "kommun",
+      "rate": 33.75,
+      "year": 2026
+    },
+    {
+      "code": "2034",
+      "name": "Orsa",
+      "level": "kommun",
+      "rate": 34.3,
+      "year": 2026
+    },
+    {
+      "code": "1421",
+      "name": "Orust",
+      "level": "kommun",
+      "rate": 33.69,
+      "year": 2026
+    },
+    {
+      "code": "1273",
+      "name": "Osby",
+      "level": "kommun",
+      "rate": 33.99,
+      "year": 2026
+    },
+    {
+      "code": "0882",
+      "name": "Oskarshamn",
+      "level": "kommun",
+      "rate": 34.21,
+      "year": 2026
+    },
+    {
+      "code": "2121",
+      "name": "Ovanåker",
+      "level": "kommun",
+      "rate": 33.37,
+      "year": 2026
+    },
+    {
+      "code": "0481",
+      "name": "Oxelösund",
+      "level": "kommun",
+      "rate": 33.05,
+      "year": 2026
+    },
+    {
+      "code": "2521",
+      "name": "Pajala",
+      "level": "kommun",
+      "rate": 34.74,
+      "year": 2026
+    },
+    {
+      "code": "1402",
+      "name": "Partille",
+      "level": "kommun",
+      "rate": 31.36,
+      "year": 2026
+    },
+    {
+      "code": "1275",
+      "name": "Perstorp",
+      "level": "kommun",
+      "rate": 31.99,
+      "year": 2026
+    },
+    {
+      "code": "2581",
+      "name": "Piteå",
+      "level": "kommun",
+      "rate": 33.59,
+      "year": 2026
+    },
+    {
+      "code": "2303",
+      "name": "Ragunda",
+      "level": "kommun",
+      "rate": 34.92,
+      "year": 2026
+    },
+    {
+      "code": "2409",
+      "name": "Robertsfors",
+      "level": "kommun",
+      "rate": 35.0,
+      "year": 2026
+    },
+    {
+      "code": "1081",
+      "name": "Ronneby",
+      "level": "kommun",
+      "rate": 33.68,
+      "year": 2026
+    },
+    {
+      "code": "2031",
+      "name": "Rättvik",
+      "level": "kommun",
+      "rate": 33.8,
+      "year": 2026
+    },
+    {
+      "code": "1981",
+      "name": "Sala",
+      "level": "kommun",
+      "rate": 33.19,
+      "year": 2026
+    },
+    {
+      "code": "0128",
+      "name": "Salem",
+      "level": "kommun",
+      "rate": 32.0,
+      "year": 2026
+    },
+    {
+      "code": "2181",
+      "name": "Sandviken",
+      "level": "kommun",
+      "rate": 33.12,
+      "year": 2026
+    },
+    {
+      "code": "0191",
+      "name": "Sigtuna",
+      "level": "kommun",
+      "rate": 31.83,
+      "year": 2026
+    },
+    {
+      "code": "1291",
+      "name": "Simrishamn",
+      "level": "kommun",
+      "rate": 31.69,
+      "year": 2026
+    },
+    {
+      "code": "1265",
+      "name": "Sjöbo",
+      "level": "kommun",
+      "rate": 32.1,
+      "year": 2026
+    },
+    {
+      "code": "1495",
+      "name": "Skara",
+      "level": "kommun",
+      "rate": 33.38,
+      "year": 2026
+    },
+    {
+      "code": "2482",
+      "name": "Skellefteå",
+      "level": "kommun",
+      "rate": 34.45,
+      "year": 2026
+    },
+    {
+      "code": "1904",
+      "name": "Skinnskatteberg",
+      "level": "kommun",
+      "rate": 33.34,
+      "year": 2026
+    },
+    {
+      "code": "1264",
+      "name": "Skurup",
+      "level": "kommun",
+      "rate": 31.6,
+      "year": 2026
+    },
+    {
+      "code": "1496",
+      "name": "Skövde",
+      "level": "kommun",
+      "rate": 33.09,
+      "year": 2026
+    },
+    {
+      "code": "2061",
+      "name": "Smedjebacken",
+      "level": "kommun",
+      "rate": 34.44,
+      "year": 2026
+    },
+    {
+      "code": "2283",
+      "name": "Sollefteå",
+      "level": "kommun",
+      "rate": 34.68,
+      "year": 2026
+    },
+    {
+      "code": "0163",
+      "name": "Sollentuna",
+      "level": "kommun",
+      "rate": 30.45,
+      "year": 2026
+    },
+    {
+      "code": "0184",
+      "name": "Solna",
+      "level": "kommun",
+      "rate": 29.7,
+      "year": 2026
+    },
+    {
+      "code": "2422",
+      "name": "Sorsele",
+      "level": "kommun",
+      "rate": 35.45,
+      "year": 2026
+    },
+    {
+      "code": "1427",
+      "name": "Sotenäs",
+      "level": "kommun",
+      "rate": 33.47,
+      "year": 2026
+    },
+    {
+      "code": "1230",
+      "name": "Staffanstorp",
+      "level": "kommun",
+      "rate": 30.12,
+      "year": 2026
+    },
+    {
+      "code": "1415",
+      "name": "Stenungsund",
+      "level": "kommun",
+      "rate": 33.12,
+      "year": 2026
+    },
+    {
+      "code": "0180",
+      "name": "Stockholm",
+      "level": "kommun",
+      "rate": 30.55,
+      "year": 2026
+    },
+    {
+      "code": "1760",
+      "name": "Storfors",
+      "level": "kommun",
+      "rate": 34.98,
+      "year": 2026
+    },
+    {
+      "code": "2421",
+      "name": "Storuman",
+      "level": "kommun",
+      "rate": 34.95,
+      "year": 2026
+    },
+    {
+      "code": "0486",
+      "name": "Strängnäs",
+      "level": "kommun",
+      "rate": 32.5,
+      "year": 2026
+    },
+    {
+      "code": "1486",
+      "name": "Strömstad",
+      "level": "kommun",
+      "rate": 33.39,
+      "year": 2026
+    },
+    {
+      "code": "2313",
+      "name": "Strömsund",
+      "level": "kommun",
+      "rate": 34.92,
+      "year": 2026
+    },
+    {
+      "code": "0183",
+      "name": "Sundbyberg",
+      "level": "kommun",
+      "rate": 31.58,
+      "year": 2026
+    },
+    {
+      "code": "2281",
+      "name": "Sundsvall",
+      "level": "kommun",
+      "rate": 33.88,
+      "year": 2026
+    },
+    {
+      "code": "1766",
+      "name": "Sunne",
+      "level": "kommun",
+      "rate": 33.75,
+      "year": 2026
+    },
+    {
+      "code": "1907",
+      "name": "Surahammar",
+      "level": "kommun",
+      "rate": 33.19,
+      "year": 2026
+    },
+    {
+      "code": "1214",
+      "name": "Svalöv",
+      "level": "kommun",
+      "rate": 31.92,
+      "year": 2026
+    },
+    {
+      "code": "1263",
+      "name": "Svedala",
+      "level": "kommun",
+      "rate": 31.42,
+      "year": 2026
+    },
+    {
+      "code": "1465",
+      "name": "Svenljunga",
+      "level": "kommun",
+      "rate": 33.53,
+      "year": 2026
+    },
+    {
+      "code": "1785",
+      "name": "Säffle",
+      "level": "kommun",
+      "rate": 33.8,
+      "year": 2026
+    },
+    {
+      "code": "2082",
+      "name": "Säter",
+      "level": "kommun",
+      "rate": 34.3,
+      "year": 2026
+    },
+    {
+      "code": "0684",
+      "name": "Sävsjö",
+      "level": "kommun",
+      "rate": 33.68,
+      "year": 2026
+    },
+    {
+      "code": "2182",
+      "name": "Söderhamn",
+      "level": "kommun",
+      "rate": 33.17,
+      "year": 2026
+    },
+    {
+      "code": "0582",
+      "name": "Söderköping",
+      "level": "kommun",
+      "rate": 33.53,
+      "year": 2026
+    },
+    {
+      "code": "0181",
+      "name": "Södertälje",
+      "level": "kommun",
+      "rate": 32.38,
+      "year": 2026
+    },
+    {
+      "code": "1083",
+      "name": "Sölvesborg",
+      "level": "kommun",
+      "rate": 33.86,
+      "year": 2026
+    },
+    {
+      "code": "1435",
+      "name": "Tanum",
+      "level": "kommun",
+      "rate": 33.04,
+      "year": 2026
+    },
+    {
+      "code": "1472",
+      "name": "Tibro",
+      "level": "kommun",
+      "rate": 33.19,
+      "year": 2026
+    },
+    {
+      "code": "1498",
+      "name": "Tidaholm",
+      "level": "kommun",
+      "rate": 33.55,
+      "year": 2026
+    },
+    {
+      "code": "0360",
+      "name": "Tierp",
+      "level": "kommun",
+      "rate": 33.0,
+      "year": 2026
+    },
+    {
+      "code": "2262",
+      "name": "Timrå",
+      "level": "kommun",
+      "rate": 34.38,
+      "year": 2026
+    },
+    {
+      "code": "0763",
+      "name": "Tingsryd",
+      "level": "kommun",
+      "rate": 34.0,
+      "year": 2026
+    },
+    {
+      "code": "1419",
+      "name": "Tjörn",
+      "level": "kommun",
+      "rate": 33.19,
+      "year": 2026
+    },
+    {
+      "code": "1270",
+      "name": "Tomelilla",
+      "level": "kommun",
+      "rate": 31.79,
+      "year": 2026
+    },
+    {
+      "code": "1737",
+      "name": "Torsby",
+      "level": "kommun",
+      "rate": 34.3,
+      "year": 2026
+    },
+    {
+      "code": "0834",
+      "name": "Torsås",
+      "level": "kommun",
+      "rate": 33.79,
+      "year": 2026
+    },
+    {
+      "code": "1452",
+      "name": "Tranemo",
+      "level": "kommun",
+      "rate": 32.98,
+      "year": 2026
+    },
+    {
+      "code": "0687",
+      "name": "Tranås",
+      "level": "kommun",
+      "rate": 33.77,
+      "year": 2026
+    },
+    {
+      "code": "1287",
+      "name": "Trelleborg",
+      "level": "kommun",
+      "rate": 31.58,
+      "year": 2026
+    },
+    {
+      "code": "1488",
+      "name": "Trollhättan",
+      "level": "kommun",
+      "rate": 33.84,
+      "year": 2026
+    },
+    {
+      "code": "0488",
+      "name": "Trosa",
+      "level": "kommun",
+      "rate": 32.03,
+      "year": 2026
+    },
+    {
+      "code": "0138",
+      "name": "Tyresö",
+      "level": "kommun",
+      "rate": 31.83,
+      "year": 2026
+    },
+    {
+      "code": "0160",
+      "name": "Täby",
+      "level": "kommun",
+      "rate": 29.88,
+      "year": 2026
+    },
+    {
+      "code": "1473",
+      "name": "Töreboda",
+      "level": "kommun",
+      "rate": 33.2,
+      "year": 2026
+    },
+    {
+      "code": "1485",
+      "name": "Uddevalla",
+      "level": "kommun",
+      "rate": 33.64,
+      "year": 2026
+    },
+    {
+      "code": "1491",
+      "name": "Ulricehamn",
+      "level": "kommun",
+      "rate": 32.53,
+      "year": 2026
+    },
+    {
+      "code": "2480",
+      "name": "Umeå",
+      "level": "kommun",
+      "rate": 34.65,
+      "year": 2026
+    },
+    {
+      "code": "0114",
+      "name": "Upplands Väsby",
+      "level": "kommun",
+      "rate": 31.75,
+      "year": 2026
+    },
+    {
+      "code": "0139",
+      "name": "Upplands-Bro",
+      "level": "kommun",
+      "rate": 31.73,
+      "year": 2026
+    },
+    {
+      "code": "0380",
+      "name": "Uppsala",
+      "level": "kommun",
+      "rate": 32.85,
+      "year": 2026
+    },
+    {
+      "code": "0760",
+      "name": "Uppvidinge",
+      "level": "kommun",
+      "rate": 33.8,
+      "year": 2026
+    },
+    {
+      "code": "0584",
+      "name": "Vadstena",
+      "level": "kommun",
+      "rate": 34.35,
+      "year": 2026
+    },
+    {
+      "code": "0665",
+      "name": "Vaggeryd",
+      "level": "kommun",
+      "rate": 33.25,
+      "year": 2026
+    },
+    {
+      "code": "0563",
+      "name": "Valdemarsvik",
+      "level": "kommun",
+      "rate": 34.03,
+      "year": 2026
+    },
+    {
+      "code": "0115",
+      "name": "Vallentuna",
+      "level": "kommun",
+      "rate": 31.23,
+      "year": 2026
+    },
+    {
+      "code": "2021",
+      "name": "Vansbro",
+      "level": "kommun",
+      "rate": 34.28,
+      "year": 2026
+    },
+    {
+      "code": "1470",
+      "name": "Vara",
+      "level": "kommun",
+      "rate": 33.25,
+      "year": 2026
+    },
+    {
+      "code": "1383",
+      "name": "Varberg",
+      "level": "kommun",
+      "rate": 31.73,
+      "year": 2026
+    },
+    {
+      "code": "0187",
+      "name": "Vaxholm",
+      "level": "kommun",
+      "rate": 31.63,
+      "year": 2026
+    },
+    {
+      "code": "1233",
+      "name": "Vellinge",
+      "level": "kommun",
+      "rate": 29.68,
+      "year": 2026
+    },
+    {
+      "code": "0685",
+      "name": "Vetlanda",
+      "level": "kommun",
+      "rate": 33.77,
+      "year": 2026
+    },
+    {
+      "code": "2462",
+      "name": "Vilhelmina",
+      "level": "kommun",
+      "rate": 35.5,
+      "year": 2026
+    },
+    {
+      "code": "0884",
+      "name": "Vimmerby",
+      "level": "kommun",
+      "rate": 34.22,
+      "year": 2026
+    },
+    {
+      "code": "2404",
+      "name": "Vindeln",
+      "level": "kommun",
+      "rate": 35.2,
+      "year": 2026
+    },
+    {
+      "code": "0428",
+      "name": "Vingåker",
+      "level": "kommun",
+      "rate": 33.5,
+      "year": 2026
+    },
+    {
+      "code": "1487",
+      "name": "Vänersborg",
+      "level": "kommun",
+      "rate": 33.69,
+      "year": 2026
+    },
+    {
+      "code": "2460",
+      "name": "Vännäs",
+      "level": "kommun",
+      "rate": 35.2,
+      "year": 2026
+    },
+    {
+      "code": "0120",
+      "name": "Värmdö",
+      "level": "kommun",
+      "rate": 31.31,
+      "year": 2026
+    },
+    {
+      "code": "0683",
+      "name": "Värnamo",
+      "level": "kommun",
+      "rate": 33.28,
+      "year": 2026
+    },
+    {
+      "code": "0883",
+      "name": "Västervik",
+      "level": "kommun",
+      "rate": 33.02,
+      "year": 2026
+    },
+    {
+      "code": "1980",
+      "name": "Västerås",
+      "level": "kommun",
+      "rate": 31.24,
+      "year": 2026
+    },
+    {
+      "code": "0780",
+      "name": "Växjö",
+      "level": "kommun",
+      "rate": 32.19,
+      "year": 2026
+    },
+    {
+      "code": "1442",
+      "name": "Vårgårda",
+      "level": "kommun",
+      "rate": 33.09,
+      "year": 2026
+    },
+    {
+      "code": "0512",
+      "name": "Ydre",
+      "level": "kommun",
+      "rate": 34.1,
+      "year": 2026
+    },
+    {
+      "code": "1286",
+      "name": "Ystad",
+      "level": "kommun",
+      "rate": 31.29,
+      "year": 2026
+    },
+    {
+      "code": "0765",
+      "name": "Älmhult",
+      "level": "kommun",
+      "rate": 33.86,
+      "year": 2026
+    },
+    {
+      "code": "2039",
+      "name": "Älvdalen",
+      "level": "kommun",
+      "rate": 34.77,
+      "year": 2026
+    },
+    {
+      "code": "0319",
+      "name": "Älvkarleby",
+      "level": "kommun",
+      "rate": 34.4,
+      "year": 2026
+    },
+    {
+      "code": "2560",
+      "name": "Älvsbyn",
+      "level": "kommun",
+      "rate": 33.79,
+      "year": 2026
+    },
+    {
+      "code": "1292",
+      "name": "Ängelholm",
+      "level": "kommun",
+      "rate": 31.35,
+      "year": 2026
+    },
+    {
+      "code": "1492",
+      "name": "Åmål",
+      "level": "kommun",
+      "rate": 33.94,
+      "year": 2026
+    },
+    {
+      "code": "2260",
+      "name": "Ånge",
+      "level": "kommun",
+      "rate": 34.62,
+      "year": 2026
+    },
+    {
+      "code": "2321",
+      "name": "Åre",
+      "level": "kommun",
+      "rate": 33.92,
+      "year": 2026
+    },
+    {
+      "code": "1765",
+      "name": "Årjäng",
+      "level": "kommun",
+      "rate": 34.25,
+      "year": 2026
+    },
+    {
+      "code": "2463",
+      "name": "Åsele",
+      "level": "kommun",
+      "rate": 35.45,
+      "year": 2026
+    },
+    {
+      "code": "1277",
+      "name": "Åstorp",
+      "level": "kommun",
+      "rate": 31.47,
+      "year": 2026
+    },
+    {
+      "code": "0561",
+      "name": "Åtvidaberg",
+      "level": "kommun",
+      "rate": 33.94,
+      "year": 2026
+    },
+    {
+      "code": "1407",
+      "name": "Öckerö",
+      "level": "kommun",
+      "rate": 33.04,
+      "year": 2026
+    },
+    {
+      "code": "0509",
+      "name": "Ödeshög",
+      "level": "kommun",
+      "rate": 33.95,
+      "year": 2026
+    },
+    {
+      "code": "1880",
+      "name": "Örebro",
+      "level": "kommun",
+      "rate": 33.65,
+      "year": 2026
+    },
+    {
+      "code": "1257",
+      "name": "Örkelljunga",
+      "level": "kommun",
+      "rate": 30.24,
+      "year": 2026
+    },
+    {
+      "code": "2284",
+      "name": "Örnsköldsvik",
+      "level": "kommun",
+      "rate": 33.85,
+      "year": 2026
+    },
+    {
+      "code": "2380",
+      "name": "Östersund",
+      "level": "kommun",
+      "rate": 33.72,
+      "year": 2026
+    },
+    {
+      "code": "0117",
+      "name": "Österåker",
+      "level": "kommun",
+      "rate": 28.93,
+      "year": 2026
+    },
+    {
+      "code": "0382",
+      "name": "Östhammar",
+      "level": "kommun",
+      "rate": 33.3,
+      "year": 2026
+    },
+    {
+      "code": "1256",
+      "name": "Östra Göinge",
+      "level": "kommun",
+      "rate": 32.17,
+      "year": 2026
+    },
+    {
+      "code": "2513",
+      "name": "Överkalix",
+      "level": "kommun",
+      "rate": 34.14,
+      "year": 2026
+    },
+    {
+      "code": "2518",
+      "name": "Övertorneå",
+      "level": "kommun",
+      "rate": 33.84,
+      "year": 2026
+    },
+    {
+      "code": "10",
+      "name": "Blekinge län",
+      "level": "region",
+      "rate": 33.73,
+      "year": 2026
+    },
+    {
+      "code": "20",
+      "name": "Dalarnas län",
+      "level": "region",
+      "rate": 34.18,
+      "year": 2026
+    },
+    {
+      "code": "09",
+      "name": "Gotlands län",
+      "level": "region",
+      "rate": 33.6,
+      "year": 2026
+    },
+    {
+      "code": "21",
+      "name": "Gävleborgs län",
+      "level": "region",
+      "rate": 33.54,
+      "year": 2026
+    },
+    {
+      "code": "13",
+      "name": "Hallands län",
+      "level": "region",
+      "rate": 32.39,
+      "year": 2026
+    },
+    {
+      "code": "23",
+      "name": "Jämtlands län",
+      "level": "region",
+      "rate": 34.0,
+      "year": 2026
+    },
+    {
+      "code": "06",
+      "name": "Jönköpings län",
+      "level": "region",
+      "rate": 33.62,
+      "year": 2026
+    },
+    {
+      "code": "08",
+      "name": "Kalmar län",
+      "level": "region",
+      "rate": 33.77,
+      "year": 2026
+    },
+    {
+      "code": "07",
+      "name": "Kronobergs län",
+      "level": "region",
+      "rate": 32.86,
+      "year": 2026
+    },
+    {
+      "code": "25",
+      "name": "Norrbottens län",
+      "level": "region",
+      "rate": 33.92,
+      "year": 2026
+    },
+    {
+      "code": "00",
+      "name": "Riket",
+      "level": "riket",
+      "rate": 32.38,
+      "year": 2026
+    },
+    {
+      "code": "12",
+      "name": "Skåne län",
+      "level": "region",
+      "rate": 31.8,
+      "year": 2026
+    },
+    {
+      "code": "01",
+      "name": "Stockholms län",
+      "level": "region",
+      "rate": 30.82,
+      "year": 2026
+    },
+    {
+      "code": "04",
+      "name": "Södermanlands län",
+      "level": "region",
+      "rate": 32.68,
+      "year": 2026
+    },
+    {
+      "code": "03",
+      "name": "Uppsala län",
+      "level": "region",
+      "rate": 32.99,
+      "year": 2026
+    },
+    {
+      "code": "17",
+      "name": "Värmlands län",
+      "level": "region",
+      "rate": 34.06,
+      "year": 2026
+    },
+    {
+      "code": "24",
+      "name": "Västerbottens län",
+      "level": "region",
+      "rate": 34.7,
+      "year": 2026
+    },
+    {
+      "code": "22",
+      "name": "Västernorrlands län",
+      "level": "region",
+      "rate": 34.09,
+      "year": 2026
+    },
+    {
+      "code": "19",
+      "name": "Västmanlands län",
+      "level": "region",
+      "rate": 31.97,
+      "year": 2026
+    },
+    {
+      "code": "14",
+      "name": "Västra Götalands län",
+      "level": "region",
+      "rate": 32.83,
+      "year": 2026
+    },
+    {
+      "code": "18",
+      "name": "Örebro län",
+      "level": "region",
+      "rate": 33.94,
+      "year": 2026
+    },
+    {
+      "code": "05",
+      "name": "Östergötlands län",
+      "level": "region",
+      "rate": 32.79,
+      "year": 2026
+    }
+  ]
+}
