@@ -19,7 +19,7 @@ class SimulationConfig(BaseModel):
     avgift_inflation: float = 0.025
 
     # Loan
-    ltv_fraction: float = Field(0.85, ge=0.10, le=0.90)
+    ltv_fraction: float = Field(0.85, ge=0.0, le=0.90)
     binding_months: int = 3
     rate_scenario: RateScenario = RateScenario.BASE
     rate_override: float | None = Field(
