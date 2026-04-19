@@ -14,9 +14,13 @@ wheels/
 .coverage
 htmlcov/
 
+# AI instruction manuals
+CLAUDE.md
+
 # IDE
 .vscode/
 .idea/
+.claude/
 
 # OS
 .DS_Store
