@@ -821,6 +821,134 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
         ),
     },
 
+    # ---- Monte Carlo ----
+    "mc.header": {
+        "sv": "🎲 Monte Carlo stresstest",
+        "en": "🎲 Monte Carlo stress test",
+        "zh-TW": "🎲 Monte Carlo 壓力測試",
+    },
+    "mc.intro": {
+        "sv": (
+            "Simulera N stokastiska vägar med volatila marknader, räntor och "
+            "bostadsvärde. Visar 10 / 50 / 90 percentiler istället för ett "
+            "deterministiskt värde, vilket synliggör \"worst case\"-risken "
+            "som det vanliga läget döljer."
+        ),
+        "en": (
+            "Simulate N stochastic paths with volatile markets, interest rates "
+            "and property value. Shows the 10th / 50th / 90th percentile "
+            "instead of one deterministic number, which exposes the worst-case "
+            "risk that the regular view hides."
+        ),
+        "zh-TW": (
+            "模擬 N 條隨機路徑，投資報酬、利率與房價都帶有波動性。"
+            "以 10 / 50 / 90 百分位取代確定性數值，"
+            "讓一般視角隱藏的「最糟情況」風險顯現。"
+        ),
+    },
+    "mc.n_paths": {
+        "sv": "Antal vägar (fler = noggrannare, långsammare)",
+        "en": "Number of paths (more = more accurate, slower)",
+        "zh-TW": "路徑數量（越多越精準、越慢）",
+    },
+    "mc.portfolio_vol": {
+        "sv": "Portföljvolatilitet (%/år, std.)",
+        "en": "Portfolio volatility (%/year, std. dev.)",
+        "zh-TW": "投資組合年波動率（%/年，標準差）",
+    },
+    "mc.rate_vol": {
+        "sv": "Räntevolatilitet (pp/år, std.)",
+        "en": "Rate volatility (pp/year, std. dev.)",
+        "zh-TW": "利率年波動（pp/年，標準差）",
+    },
+    "mc.property_vol": {
+        "sv": "Bostadsvärdevolatilitet (%/år, std.)",
+        "en": "Property-value volatility (%/year, std. dev.)",
+        "zh-TW": "房價年波動率（%/年，標準差）",
+    },
+    "mc.correlation": {
+        "sv": "Korrelation ränta ↔ bostadspris",
+        "en": "Correlation rate ↔ property",
+        "zh-TW": "利率 ↔ 房價相關性",
+    },
+    "mc.correlation_help": {
+        "sv": (
+            "Negativ korrelation: höga räntor trycker ner bostadspriser. "
+            "Historisk riktning i Sverige."
+        ),
+        "en": (
+            "Negative correlation: high rates push property prices down. "
+            "Historical direction in Sweden."
+        ),
+        "zh-TW": (
+            "負相關：利率上升會壓抑房價。符合瑞典的歷史方向。"
+        ),
+    },
+    "mc.run": {
+        "sv": "▶️ Kör Monte Carlo",
+        "en": "▶️ Run Monte Carlo",
+        "zh-TW": "▶️ 執行 Monte Carlo",
+    },
+    "mc.running": {
+        "sv": "Kör {n} vägar × 3 scenarier…",
+        "en": "Running {n} paths × 3 scenarios…",
+        "zh-TW": "執行 {n} 條路徑 × 3 種情境…",
+    },
+    "mc.chart_title": {
+        "sv": "Nettoförmögenhet — P10 / P50 / P90 över {n} vägar",
+        "en": "Net worth — P10 / P50 / P90 across {n} paths",
+        "zh-TW": "淨資產 — 跨 {n} 條路徑的 P10 / P50 / P90",
+    },
+    "mc.scenario_median": {
+        "sv": "{label} (P50)",
+        "en": "{label} (P50)",
+        "zh-TW": "{label}（P50）",
+    },
+    "mc.scenario_band": {
+        "sv": "{label} P10–P90",
+        "en": "{label} P10–P90",
+        "zh-TW": "{label} P10–P90",
+    },
+    "mc.terminal_header": {
+        "sv": "Terminal nettoförmögenhet över percentiler",
+        "en": "Terminal net worth across percentiles",
+        "zh-TW": "期末淨資產的百分位分布",
+    },
+    "mc.col.p10": {
+        "sv": "P10 (sämre 10 %)",
+        "en": "P10 (worse 10 %)",
+        "zh-TW": "P10（較差的 10 %）",
+    },
+    "mc.col.p50": {
+        "sv": "P50 (median)",
+        "en": "P50 (median)",
+        "zh-TW": "P50（中位數）",
+    },
+    "mc.col.p90": {
+        "sv": "P90 (bättre 10 %)",
+        "en": "P90 (better 10 %)",
+        "zh-TW": "P90（較好的 10 %）",
+    },
+    "mc.col.p_infeasible": {
+        "sv": "Sannolikhet infeasibility > 0",
+        "en": "Probability of any infeasibility",
+        "zh-TW": "出現不可行月份的機率",
+    },
+    "mc.risk_note": {
+        "sv": (
+            "Om P(infeasibility) är hög → strategin är flaskhals-känslig "
+            "mot nedåtrisk (marknadsfall, räntechock, fallande bostadspris)."
+        ),
+        "en": (
+            "If P(infeasibility) is high → the strategy is fragile to "
+            "downside (market drawdown, rate shock, falling property)."
+        ),
+        "zh-TW": (
+            "若 P(infeasibility) 偏高 → 此策略對下行風險"
+            "（市場下跌、利率衝擊、房價下跌）較脆弱。"
+        ),
+    },
+
     # ---- Config errors ----
     "err.config_invalid": {
         "sv": "Hushållskonfiguration ogiltig: {err}",
