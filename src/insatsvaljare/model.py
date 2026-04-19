@@ -1,27 +1,97 @@
-"""Monthly simulation engine for LTV optimization over a configurable horizon.
+"""Monthly simulation engine for multi-member household LTV optimization.
 
-The engine takes a SimulationConfig + a monthly interest rate path and
-returns a month-by-month DataFrame of balances. Tax effects are applied
-at year-end (ränteavdrag refunded, ISK schablonskatt deducted) to match
-how they're actually experienced in cash-flow terms.
+The engine takes a SimulationConfig with one or more household members
+and returns a month-by-month DataFrame of aggregate balances. Per-member
+portfolio state is tracked internally; only aggregate `portfolio` and
+`net_worth` are exposed in the DataFrame.
+
+Tax effects are applied at year-end (ränteavdrag refunded with
+skattereduktion-cap per member, ISK / AF / sparkonto tax deducted
+per bucket) to match how they actually land in cash-flow terms.
 """
 
 from __future__ import annotations
 
+from dataclasses import dataclass, field
+from typing import Literal
+
 import numpy as np
 import pandas as pd
 
-from insatsvaljare.defaults import SimulationConfig
-from insatsvaljare.rates import amortization_rate, mortgage_rate, RateScenario
-from insatsvaljare.tax import (
-    AccountType,
-    annual_investment_tax,
-    ranteavdrag,
+from insatsvaljare.defaults import (
+    CustomBucket,
+    HouseholdMember,
+    InvestmentStrategy,
+    SimulationConfig,
+    TaxModel,
 )
+from insatsvaljare.rates import RateScenario, amortization_rate, mortgage_rate
+from insatsvaljare.tax import ISK_EFFECTIVE_RATE_2026, ISK_FRIBELOPP_2026
+from insatsvaljare.tax_income import compute_net_income
+
+
+# ----------------------------------------------------------------
+# Internal runtime state
+# ----------------------------------------------------------------
+
+@dataclass
+class _Bucket:
+    """One portfolio slot inside a member's strategy."""
+    value: float
+    annual_return: float
+    tax_model: TaxModel
+    allocation_fraction: float  # share of saving inflow going here
+    year_start_value: float = 0.0
+    deposits_ytd: float = 0.0
+    # Quarterly openings for ISK kapitalunderlag
+    quarterly_openings: list[float] = field(default_factory=lambda: [0.0, 0.0, 0.0, 0.0])
+
+
+@dataclass
+class _MemberRuntime:
+    name: str
+    brutto_income_annual: float
+    personal_expenses_monthly: float
+    buckets: list[_Bucket]
+    interest_share_ytd: float = 0.0
+
+
+def _materialize_buckets(member: HouseholdMember, initial_portfolio: float) -> list[_Bucket]:
+    """Build the per-bucket runtime list from a member's strategy config."""
+    if member.strategy == InvestmentStrategy.SPARKONTO:
+        return [_Bucket(
+            value=initial_portfolio,
+            annual_return=member.sparkonto_return,
+            tax_model=TaxModel.SPARKONTO,
+            allocation_fraction=1.0,
+            year_start_value=initial_portfolio,
+            quarterly_openings=[initial_portfolio, 0.0, 0.0, 0.0],
+        )]
+    if member.strategy == InvestmentStrategy.RANTEFOND_ISK:
+        return [_Bucket(
+            value=initial_portfolio,
+            annual_return=member.rantefond_isk_return,
+            tax_model=TaxModel.ISK,
+            allocation_fraction=1.0,
+            year_start_value=initial_portfolio,
+            quarterly_openings=[initial_portfolio, 0.0, 0.0, 0.0],
+        )]
+    # ANPASSAD: split initial_portfolio across custom_buckets per allocation.
+    out: list[_Bucket] = []
+    for cb in member.custom_buckets:
+        v0 = initial_portfolio * cb.allocation_fraction
+        out.append(_Bucket(
+            value=v0,
+            annual_return=cb.annual_return,
+            tax_model=cb.tax_model,
+            allocation_fraction=cb.allocation_fraction,
+            year_start_value=v0,
+            quarterly_openings=[v0, 0.0, 0.0, 0.0],
+        ))
+    return out
 
 
 def _rate_path_for(config: SimulationConfig) -> np.ndarray:
-    """Build a monthly rate path from config (deterministic scenario)."""
     n_months = config.years * 12
     if config.rate_override is not None:
         return np.full(n_months, config.rate_override, dtype=float)
@@ -33,28 +103,58 @@ def _rate_path_for(config: SimulationConfig) -> np.ndarray:
     return np.full(n_months, r, dtype=float)
 
 
+def _apply_year_end_portfolio_tax(member: _MemberRuntime) -> None:
+    """Apply per-bucket year-end tax, then reset trackers.
+
+    ISK / KF share ONE 300 000 kr fribelopp per member (aggregated across
+    all their ISK+KF buckets). AF / SPARKONTO tax 30 % of annual gain
+    per bucket. NONE: no tax.
+    """
+    # ---- ISK / KF aggregate with shared fribelopp ----
+    isk_like_buckets = [
+        b for b in member.buckets if b.tax_model in (TaxModel.ISK, TaxModel.KF)
+    ]
+    if isk_like_buckets:
+        per_bucket_ku = [
+            (sum(b.quarterly_openings) + b.deposits_ytd) / 4.0
+            for b in isk_like_buckets
+        ]
+        total_ku = sum(per_bucket_ku)
+        taxable = max(0.0, total_ku - ISK_FRIBELOPP_2026)
+        if taxable > 0 and total_ku > 0:
+            for b, b_ku in zip(isk_like_buckets, per_bucket_ku):
+                share = b_ku / total_ku
+                b_tax = ISK_EFFECTIVE_RATE_2026 * taxable * share
+                b.value = max(0.0, b.value - b_tax)
+
+    # ---- AF / SPARKONTO: 30 % on annual gain ----
+    for b in member.buckets:
+        if b.tax_model in (TaxModel.AF, TaxModel.SPARKONTO):
+            gain = max(0.0, b.value - b.year_start_value - b.deposits_ytd)
+            b.value = max(0.0, b.value - gain * 0.30)
+
+    # ---- Reset per-year trackers (start-of-next-year state) ----
+    for b in member.buckets:
+        b.year_start_value = b.value
+        b.deposits_ytd = 0.0
+        b.quarterly_openings = [b.value, 0.0, 0.0, 0.0]
+
+
 def simulate(
     config: SimulationConfig,
     rate_path: np.ndarray | None = None,
 ) -> pd.DataFrame:
-    """Run the monthly simulation. Returns a DataFrame indexed by month.
+    """Run the monthly multi-member simulation.
 
-    Columns:
-        year, month_in_year, month
-        loan              — outstanding loan balance
-        property_value    — current market value (grows with appreciation)
-        portfolio         — investment account balance
-        interest          — monthly interest paid
-        amortization      — monthly mandatory amortization
-        avgift            — monthly BRF fee
-        cash_flow         — income − living − interest − amort − avgift
-        savings           — max(0, cash_flow) flowing into portfolio
-        rate              — annual nominal rate in effect
-        ltv_amort         — LTV used for amortization-tier determination
-        ltv_market        — current market LTV (V_t basis)
-        house_equity      — property_value − loan
-        net_worth         — house_equity + portfolio
-        infeasible        — True if monthly cash_flow < −liquidity_buffer
+    Returns a DataFrame indexed by month. Aggregate columns:
+        year, month_in_year, month, rate
+        loan, property_value, interest, amortization, avgift
+        portfolio (= Σ members' portfolios)
+        cash_flow (= Σ members' cash flows)
+        savings  (= Σ members' savings inflows)
+        house_equity, net_worth
+        ltv_amort, ltv_market
+        infeasible (True if any member's monthly cash_flow < −liquidity_buffer)
     """
     n_months = config.years * 12
     if rate_path is None:
@@ -62,130 +162,166 @@ def simulate(
     if len(rate_path) != n_months:
         raise ValueError(f"rate_path length {len(rate_path)} != {n_months}")
 
-    # Initial state
-    L0 = config.property_value * config.ltv_fraction
+    if not config.members:
+        raise ValueError("SimulationConfig must have at least one household member")
+
     V0 = config.property_value
-    insats = V0 - L0
-    if config.initial_cash < insats - 1e-6:
+    L0 = V0 * config.ltv_fraction
+    insats_total = V0 - L0
+    total_cash = config.total_initial_cash
+
+    if total_cash < insats_total - 1e-6:
         raise ValueError(
-            f"initial_cash {config.initial_cash:,.0f} < required insats {insats:,.0f} "
+            f"total initial_cash {total_cash:,.0f} < required insats {insats_total:,.0f} "
             f"for LTV {config.ltv_fraction:.0%}"
         )
+
+    # Split insats proportionally to each member's cash; portfolio seed = residual.
+    members: list[_MemberRuntime] = []
+    for m in config.members:
+        share = (m.initial_cash / total_cash) if total_cash > 0 else 0.0
+        member_insats = insats_total * share
+        member_portfolio_seed = max(0.0, m.initial_cash - member_insats)
+        members.append(_MemberRuntime(
+            name=m.name,
+            brutto_income_annual=m.annual_brutto_income,
+            personal_expenses_monthly=m.monthly_personal_expenses,
+            buckets=_materialize_buckets(m, member_portfolio_seed),
+        ))
+
+    # Shared state
     L = L0
     V = V0
-    # Excess cash beyond insats seeds the investment portfolio — this is
-    # the lever the model exists to analyze.
-    P = config.initial_cash - insats
-
-    # Amortization basis: frozen at purchase V unless user opted in to
-    # 5-year revaluation.
     amort_basis_V = V0
-    amort_basis_L0 = L0  # annual mandatory amort is a % of this
+    amort_basis_L0 = L0
 
-    # Household cash-flow series that evolve yearly
-    annual_income = config.annual_gross_income
-    monthly_income = annual_income / 12
-    monthly_living = config.monthly_living_cost
+    # Year-end reconciliation trackers (aggregate)
+    interest_ytd_total = 0.0
     base_monthly_avgift = config.monthly_avgift
 
-    # Year-end bookkeeping
-    interest_ytd = 0.0
-    deposits_ytd = 0.0
+    # Per-year monthly-income table (brutto → netto-before-ranteavdrag), indexed by member
+    def _member_monthly_netto_for_year(brutto: float) -> float:
+        """Netto before ranteavdrag: brutto − kommunal − statlig + JSA, then /12."""
+        br = compute_net_income(
+            brutto=brutto,
+            kommunal_rate=config.kommunal_tax_rate,
+            annual_interest=0.0,  # interest treatment at year-end
+        )
+        return br.netto / 12.0
 
-    # Q1 opening for the kapitalunderlag formula is the start-of-year
-    # balance — at t=0 that's the freed-cash seed.
-    quarterly_openings = [P, 0.0, 0.0, 0.0]
+    monthly_netto = [
+        _member_monthly_netto_for_year(m.brutto_income_annual) for m in members
+    ]
 
     rows: list[dict] = []
 
     for t in range(n_months):
         year = t // 12
         month_in_year = t % 12 + 1
-
-        # Current rate (possibly time-varying via rate_path)
         rate = rate_path[t]
 
-        # Market LTV (for reporting)
         ltv_market = L / V if V > 0 else 0.0
-
-        # Amortization tier uses basis-LTV (L_current / amort_basis_V)
         ltv_amort = L / amort_basis_V if amort_basis_V > 0 else 0.0
         amort_rate_annual = amortization_rate(ltv_amort)
         amort_m = amort_rate_annual * amort_basis_L0 / 12
 
-        # Interest this month
         interest_m = L * rate / 12
-
-        # Monthly avgift — grows once per year (in Jan = month_in_year==1)
-        current_avgift = base_monthly_avgift * (1 + config.avgift_inflation) ** year
-
-        # Cash flow
-        cash_flow = (
-            monthly_income
-            - monthly_living
-            - interest_m
-            - amort_m
-            - current_avgift
+        current_avgift = (
+            base_monthly_avgift * (1 + config.avgift_inflation) ** year
         )
-        infeasible = cash_flow < -config.liquidity_buffer
 
-        # Apply: reduce loan, add savings to portfolio
+        # Shared costs split proportionally to brutto income.
+        total_brutto_this_year = sum(m.brutto_income_annual for m in members)
+        shared_cost_total = interest_m + amort_m + current_avgift
+
+        # Apply amort (shared)
         L = max(0.0, L - amort_m)
-        savings = max(0.0, cash_flow)
-        P += savings
-        deposits_ytd += savings
-        # Portfolio grows monthly
-        P *= 1 + config.portfolio_return / 12
+        interest_ytd_total += interest_m
 
-        # Track quarterly openings (at month 1, 4, 7, 10 — value BEFORE additions)
-        # We approximate "opening" with balance at start of each quarter.
-        if month_in_year in (4, 7, 10):
-            q = (month_in_year - 1) // 3
-            quarterly_openings[q] = P
+        household_cash_flow = 0.0
+        household_savings = 0.0
+        any_infeasible = False
 
-        interest_ytd += interest_m
+        for i, mr in enumerate(members):
+            brutto_share = (
+                mr.brutto_income_annual / total_brutto_this_year
+                if total_brutto_this_year > 0
+                else 1.0 / len(members)
+            )
+            shared_cost_share = shared_cost_total * brutto_share
+            mr.interest_share_ytd += interest_m * brutto_share
 
-        # Appreciation compounds monthly
+            income_m = monthly_netto[i]
+            cash_flow = (
+                income_m
+                - mr.personal_expenses_monthly
+                - shared_cost_share
+            )
+            if cash_flow < -config.liquidity_buffer:
+                any_infeasible = True
+            household_cash_flow += cash_flow
+
+            savings = max(0.0, cash_flow)
+            household_savings += savings
+
+            # Route savings into buckets per strategy allocation_fraction.
+            for b in mr.buckets:
+                contribution = savings * b.allocation_fraction
+                b.value += contribution
+                b.deposits_ytd += contribution
+                # Monthly compound growth
+                b.value *= 1 + b.annual_return / 12.0
+
+            # Track quarterly openings at start of Q2/Q3/Q4
+            if month_in_year in (4, 7, 10):
+                q = (month_in_year - 1) // 3
+                for b in mr.buckets:
+                    mr_bucket_val_before_q = b.value
+                    b.quarterly_openings[q] = mr_bucket_val_before_q
+
+        # Property appreciation (shared)
         V *= (1 + config.property_appreciation) ** (1 / 12)
 
         # Year-end reconciliation (December)
         if month_in_year == 12:
-            # Ränteavdrag: skattereduktion refunded in the following year's
-            # tax return. For cash-flow purposes we credit at year-end.
-            credit = ranteavdrag(interest_ytd)
-            P += credit
+            for i, mr in enumerate(members):
+                # Per-member ränteavdrag with cap
+                br = compute_net_income(
+                    brutto=mr.brutto_income_annual,
+                    kommunal_rate=config.kommunal_tax_rate,
+                    annual_interest=mr.interest_share_ytd,
+                )
+                # monthly_netto already excluded ranteavdrag; credit only the actual
+                rant_refund = br.ranteavdrag_actual
+                if mr.buckets:
+                    # Drop the refund into the first bucket (rough approx;
+                    # the refund isn't strictly "invested" but it lands in the
+                    # household's capital pool)
+                    mr.buckets[0].value += rant_refund
+                    mr.buckets[0].deposits_ytd += rant_refund
 
-            # Investment account tax (schablonskatt or realized-gains)
-            # Approximate realized gains as the year's net portfolio growth
-            # minus deposits (used only for "other" account type).
-            realized_gains_estimate = max(0.0, P - quarterly_openings[0] - deposits_ytd - credit)
-            inv_tax = annual_investment_tax(
-                account_type=config.account_type,
-                quarterly_openings=quarterly_openings,
-                annual_deposits=deposits_ytd,
-                realized_gains=realized_gains_estimate,
-                n_persons=config.n_persons_for_fribelopp,
-                other_rate=config.other_account_tax_rate,
-            )
-            P = max(0.0, P - inv_tax)
+                # Portfolio-level taxes per bucket (ISK / AF / SPARKONTO / NONE)
+                _apply_year_end_portfolio_tax(mr)
 
-            # Income growth takes effect at January
-            annual_income *= 1 + config.income_growth
-            monthly_income = annual_income / 12
+                # Reset per-year tracker
+                mr.interest_share_ytd = 0.0
 
-            # 5-year revaluation (optional) — re-anchor amortization basis
-            # to current market value. Only kicks in at end of year 5
-            # (and 10, though that's our horizon).
+            # Income growth for next year (same growth for all members)
+            for j in range(len(members)):
+                members[j].brutto_income_annual *= 1 + config.income_growth
+                monthly_netto[j] = _member_monthly_netto_for_year(
+                    members[j].brutto_income_annual
+                )
+
+            # 5-year revaluation of amortization basis
             if config.allow_5y_revaluation and (year + 1) % 5 == 0:
                 amort_basis_V = V
                 amort_basis_L0 = L
 
-            # Reset YTD trackers for next year
-            interest_ytd = 0.0
-            deposits_ytd = 0.0
-            # Q1 opening of the *next* year is current P
-            quarterly_openings = [P, 0.0, 0.0, 0.0]
+            # Reset annual tracker
+            interest_ytd_total = 0.0
 
+        portfolio_total = sum(b.value for mr in members for b in mr.buckets)
         house_equity = V - L
         rows.append({
             "month": t + 1,
@@ -193,18 +329,18 @@ def simulate(
             "month_in_year": month_in_year,
             "loan": L,
             "property_value": V,
-            "portfolio": P,
+            "portfolio": portfolio_total,
             "interest": interest_m,
             "amortization": amort_m,
             "avgift": current_avgift,
-            "cash_flow": cash_flow,
-            "savings": savings,
+            "cash_flow": household_cash_flow,
+            "savings": household_savings,
             "rate": rate,
             "ltv_amort": ltv_amort,
             "ltv_market": ltv_market,
             "house_equity": house_equity,
-            "net_worth": house_equity + P,
-            "infeasible": infeasible,
+            "net_worth": house_equity + portfolio_total,
+            "infeasible": any_infeasible,
         })
 
     df = pd.DataFrame(rows)
@@ -215,7 +351,6 @@ def simulate(
         sale_price = last["property_value"]
         broker_fee = sale_price * config.broker_fee_fraction
         net_sale = sale_price - broker_fee - last["loan"]
-        # Simplified: reavinst tax only on realized gain vs. purchase price.
         gain = max(0.0, sale_price - config.property_value)
         reavinst_tax = gain * 0.22
         exit_cash = net_sale - reavinst_tax
@@ -237,15 +372,7 @@ def incremental_irr(
     df_baseline: pd.DataFrame,
     initial_insats_diff: float,
 ) -> float | None:
-    """IRR on the cash-flow differential between two LTV choices.
-
-    Models the decision "put more insats in now" as:
-      t=0:  −(insats_cand − insats_base)   [extra cash out of portfolio]
-      t=1..T:  (CF_cand − CF_base)         [ongoing monthly difference]
-      t=T:  + (NW_cand − NW_base)          [terminal delta realized]
-
-    Returns annualized IRR; None if no sign change makes IRR undefined.
-    """
+    """IRR on the cash-flow differential between two LTV choices."""
     cf_diff = (df_candidate["cash_flow"] - df_baseline["cash_flow"]).to_numpy()
     terminal_diff = (
         df_candidate["net_worth"].iloc[-1] - df_baseline["net_worth"].iloc[-1]
@@ -256,7 +383,6 @@ def incremental_irr(
         [cf_diff[-1] + terminal_diff],
     ])
 
-    # Simple IRR via bisection on NPV sign
     if np.all(flows >= 0) or np.all(flows <= 0):
         return None
 
@@ -264,7 +390,7 @@ def incremental_irr(
         t = np.arange(len(flows))
         return float(np.sum(flows / (1 + rate_monthly) ** t))
 
-    lo, hi = -0.10, 0.10  # monthly rate bounds
+    lo, hi = -0.10, 0.10
     if npv(lo) * npv(hi) > 0:
         return None
     for _ in range(200):

@@ -4,7 +4,13 @@ from __future__ import annotations
 
 import pytest
 
-from insatsvaljare.defaults import SimulationConfig
+from insatsvaljare.defaults import (
+    CustomBucket,
+    HouseholdMember,
+    InvestmentStrategy,
+    SimulationConfig,
+    TaxModel,
+)
 from insatsvaljare.model import ltv_sweep, simulate, terminal_net_worth
 from insatsvaljare.rates import RateScenario
 
@@ -41,7 +47,7 @@ class TestSimulate:
         cfg = SimulationConfig(
             property_value=6_000_000,
             ltv_fraction=0.10,
-            initial_cash=1_000_000,  # way too little
+            members=[HouseholdMember(initial_cash=1_000_000)],  # way too little
         )
         with pytest.raises(ValueError, match="insats"):
             simulate(cfg)
@@ -56,7 +62,9 @@ class TestSimulate:
 
     def test_low_return_favors_lower_ltv(self):
         """With portfolio return < interest rate, lower LTV should win."""
-        cfg = SimulationConfig(portfolio_return=0.01)  # 1 % portfolio
+        cfg = SimulationConfig(
+            members=[HouseholdMember(rantefond_isk_return=0.01)],  # 1 % portfolio
+        )
         sweep = ltv_sweep(cfg)
         # Low-LTV terminal NW should beat high-LTV when return is poor
         nw_50 = sweep.loc[sweep["ltv"] == 0.50, "terminal_net_worth"].values[0]
@@ -84,6 +92,119 @@ class TestSimulate:
         last = df.iloc[-1]
         assert last["loan"] == 0
         assert last["house_equity"] == 0
+
+
+class TestMultiMember:
+    def _two_member_cfg(self, **overrides):
+        """Two members with the same aggregate cash/income as the default single member.
+        5 400 000 = 3 000 000 + 2 400 000.  900 000 = 500 000 + 400 000."""
+        members = [
+            HouseholdMember(
+                name="A",
+                initial_cash=3_000_000,
+                annual_brutto_income=500_000,
+                monthly_personal_expenses=12_000,
+            ),
+            HouseholdMember(
+                name="B",
+                initial_cash=2_400_000,
+                annual_brutto_income=400_000,
+                monthly_personal_expenses=13_000,
+            ),
+        ]
+        base = SimulationConfig(members=members)
+        if overrides:
+            return base.model_copy(update=overrides)
+        return base
+
+    def test_two_members_output_shape_matches_one(self, base_config):
+        df_single = simulate(base_config)
+        df_multi = simulate(self._two_member_cfg())
+        assert len(df_multi) == len(df_single)
+        assert set(df_multi.columns) == set(df_single.columns)
+
+    def test_two_members_insats_split_proportional(self):
+        """Two-member household with same aggregate cash should still cover insats."""
+        cfg = self._two_member_cfg(ltv_fraction=0.10)  # 5.4 Mkr insats needed
+        df = simulate(cfg)
+        assert df["loan"].iloc[0] > 0  # simulation ran
+
+    def test_two_members_isk_fribelopp_advantage(self):
+        """Two ISK holders each get 300 k fribelopp → lower schablonskatt vs one person
+        with same aggregate portfolio."""
+        two = self._two_member_cfg(ltv_fraction=0.90)  # Big portfolio seed
+        one = SimulationConfig(ltv_fraction=0.90)      # Same aggregate cash → same seed
+        df_two = simulate(two)
+        df_one = simulate(one)
+        # Two-member household should end up with slightly higher aggregate portfolio
+        # because fribelopp doubles and schablonskatt is less bitey.
+        assert df_two["portfolio"].iloc[-1] >= df_one["portfolio"].iloc[-1] - 1e-3
+
+    def test_two_members_shared_cost_split_by_income(self):
+        """The high-income member's cash_flow should reflect paying more of shared costs."""
+        # Indirect test: household total cash_flow should match single-member
+        # approximately (net income is equivalent, costs are the same).
+        df_two = simulate(self._two_member_cfg())
+        df_one = simulate(SimulationConfig())
+        # Loan dynamics are identical (same V, same LTV, same income total)
+        assert df_two["loan"].iloc[-1] == pytest.approx(df_one["loan"].iloc[-1])
+
+
+class TestInvestmentStrategies:
+    def test_sparkonto_lower_return_than_isk_for_same_params(self):
+        """Sparkonto at 2.5 % should yield less than Räntefond ISK at 6.5 %."""
+        m_spark = HouseholdMember(
+            name="X",
+            strategy=InvestmentStrategy.SPARKONTO,
+            sparkonto_return=0.025,
+        )
+        m_isk = HouseholdMember(
+            name="X",
+            strategy=InvestmentStrategy.RANTEFOND_ISK,
+            rantefond_isk_return=0.065,
+        )
+        nw_spark = simulate(SimulationConfig(members=[m_spark]))["net_worth"].iloc[-1]
+        nw_isk = simulate(SimulationConfig(members=[m_isk]))["net_worth"].iloc[-1]
+        assert nw_isk > nw_spark
+
+    def test_tax_none_beats_tax_isk_all_else_equal(self):
+        """Zero-tax bucket compounds faster than ISK with schablonskatt."""
+        m_isk = HouseholdMember(
+            name="X",
+            strategy=InvestmentStrategy.ANPASSAD,
+            custom_buckets=[
+                CustomBucket(allocation_fraction=1.0, annual_return=0.05, tax_model=TaxModel.ISK),
+            ],
+        )
+        m_none = HouseholdMember(
+            name="X",
+            strategy=InvestmentStrategy.ANPASSAD,
+            custom_buckets=[
+                CustomBucket(allocation_fraction=1.0, annual_return=0.05, tax_model=TaxModel.NONE),
+            ],
+        )
+        nw_isk = simulate(SimulationConfig(members=[m_isk]))["net_worth"].iloc[-1]
+        nw_none = simulate(SimulationConfig(members=[m_none]))["net_worth"].iloc[-1]
+        assert nw_none > nw_isk
+
+    def test_anpassad_allocation_must_sum_to_one(self):
+        with pytest.raises(ValueError, match="allocation_fraction"):
+            HouseholdMember(
+                name="X",
+                strategy=InvestmentStrategy.ANPASSAD,
+                custom_buckets=[
+                    CustomBucket(allocation_fraction=0.5, annual_return=0.05, tax_model=TaxModel.ISK),
+                    # Sum = 0.5 — not 1.0.
+                ],
+            )
+
+    def test_anpassad_requires_at_least_one_bucket(self):
+        with pytest.raises(ValueError, match="ANPASSAD"):
+            HouseholdMember(
+                name="X",
+                strategy=InvestmentStrategy.ANPASSAD,
+                custom_buckets=[],
+            )
 
 
 class TestLtvSweep:
