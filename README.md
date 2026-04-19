@@ -27,7 +27,7 @@ uv run pytest
    - Gå till https://share.streamlit.io/
    - Logga in med GitHub
    - "New app" → välj repo `Insatsvaljare`, branch `main`, path `src/insatsvaljare/app.py`
-   - Python version: `3.12`
+   - Python version: `3.14`
    - Deploy
 
 3. **Dela**: Appen får en URL i form `https://insatsvaljare-<hash>.streamlit.app`.
@@ -37,7 +37,7 @@ Alla deps hanteras via `requirements.txt`. Snapshot-data (Stabelo-räntor) ligge
 ### Alternativ: Railway / Render / Fly.io
 
 ```dockerfile
-FROM python:3.12-slim
+FROM python:3.14-slim
 WORKDIR /app
 COPY . .
 RUN pip install -r requirements.txt
