@@ -11,7 +11,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -36,7 +35,6 @@ from insatsvaljare.model import (
     simulate,
     terminal_net_worth,
 )
-from insatsvaljare.montecarlo import MonteCarloParams, run_monte_carlo
 from insatsvaljare.rates import (
     RateScenario,
     mortgage_rate,
@@ -182,53 +180,6 @@ def _run_three_scenarios(config_json: str, user_insats_kr: int):
 def _run_sweep(config_json: str):
     cfg = SimulationConfig.model_validate_json(config_json)
     return ltv_sweep(cfg)
-
-
-@st.cache_data(show_spinner=False)
-def _run_mc_for_scenarios(
-    config_json: str,
-    user_insats_kr: int,
-    mc_params_json: str,
-) -> dict:
-    """Run Monte Carlo for all three scenarios A/B/C and return their results.
-
-    Cached on the serialised config + MC params so re-renders without input
-    changes return instantly.
-    """
-    import json
-    base = SimulationConfig.model_validate_json(config_json)
-    V = base.property_value
-    total_cash = base.total_initial_cash
-    insats_min = 0.10 * V
-    insats_max = min(total_cash, V)
-
-    ltvs = {
-        "A": max(0.0, (V - insats_max) / V),
-        "B": 0.90,
-        "C": max(0.0, (V - max(insats_min, min(insats_max, float(user_insats_kr)))) / V),
-    }
-    params_dict = json.loads(mc_params_json)
-    params = MonteCarloParams(**params_dict)
-
-    out = {}
-    for key, ltv in ltvs.items():
-        # For A and B, strip user's rate_override so MC uses scenario-derived rates
-        update = {"ltv_fraction": ltv}
-        if key != "C":
-            update["rate_override"] = None
-        cfg = base.model_copy(update=update)
-        result = run_monte_carlo(cfg, params)
-        out[key] = {
-            "ltv": ltv,
-            "quantiles": result.quantiles,
-            "terminal_net_worth": result.terminal_net_worth,
-            "p10": float(np.quantile(result.terminal_net_worth, 0.10)),
-            "p50": float(np.quantile(result.terminal_net_worth, 0.50)),
-            "p90": float(np.quantile(result.terminal_net_worth, 0.90)),
-            "p_infeasible": result.p_infeasible,
-            "n_paths": result.n_paths,
-        }
-    return out
 
 
 @st.cache_resource(show_spinner=False)
@@ -894,134 +845,6 @@ st.plotly_chart(fig_sweep, width="stretch")
 # ----------------------------------------------------------------
 # Expanders
 # ----------------------------------------------------------------
-
-with st.expander(t("mc.header"), expanded=False):
-    st.caption(t("mc.intro"))
-
-    mc_col_a, mc_col_b = st.columns(2)
-    with mc_col_a:
-        mc_n_paths = st.slider(
-            t("mc.n_paths"),
-            min_value=50, max_value=1_000, value=300, step=50,
-            key="mc_n_paths",
-        )
-        mc_portfolio_vol = st.slider(
-            t("mc.portfolio_vol"),
-            min_value=0.0, max_value=30.0, value=15.0, step=0.5,
-            key="mc_portfolio_vol",
-        ) / 100
-        mc_property_vol = st.slider(
-            t("mc.property_vol"),
-            min_value=0.0, max_value=15.0, value=8.0, step=0.5,
-            key="mc_property_vol",
-        ) / 100
-    with mc_col_b:
-        mc_rate_vol = st.slider(
-            t("mc.rate_vol"),
-            min_value=0.0, max_value=4.0, value=1.5, step=0.1,
-            key="mc_rate_vol",
-        ) / 100
-        mc_correlation = st.slider(
-            t("mc.correlation"),
-            min_value=-1.0, max_value=0.0, value=-0.3, step=0.05,
-            key="mc_correlation",
-            help=t("mc.correlation_help"),
-        )
-        run_mc = st.button(t("mc.run"), key="mc_run_btn", type="primary")
-
-    if run_mc or st.session_state.get("mc_has_run", False):
-        st.session_state.mc_has_run = True
-        import json
-        mc_params_json = json.dumps({
-            "n_paths": int(mc_n_paths),
-            "portfolio_vol": mc_portfolio_vol,
-            "sparkonto_vol": 0.0,
-            "property_vol": mc_property_vol,
-            "rate_vol": mc_rate_vol,
-            "rate_mean_reversion": 0.25,
-            "rate_long_run_mean": 0.035,
-            "property_rate_correlation": mc_correlation,
-            "seed": 42,
-        })
-        with st.spinner(t("mc.running").format(n=mc_n_paths)):
-            mc_scenarios = _run_mc_for_scenarios(
-                config.model_dump_json(),
-                int(user_insats_kr),
-                mc_params_json,
-            )
-
-        # Chart — median lines + P10/P90 bands
-        st.markdown(f"**{t('mc.chart_title').format(n=mc_n_paths)}**")
-        mc_colors = {"A": "#2e7d32", "B": "#c62828", "C": "#1976d2"}
-        mc_rgb = {"A": "46, 125, 50", "B": "198, 40, 40", "C": "25, 118, 210"}
-        short_names = {
-            "A": "A: Max insats",
-            "B": "B: Min insats (10 %)",
-            "C": "C: Ditt val" if st.session_state.lang == "sv" else (
-                "C: Your pick" if st.session_state.lang == "en" else "C：您的選擇"
-            ),
-        }
-
-        fig_mc = go.Figure()
-        for key in ("A", "B", "C"):
-            q = mc_scenarios[key]["quantiles"]
-            # P10-P90 band (transparent fill between two invisible lines)
-            fig_mc.add_trace(go.Scatter(
-                x=horizon_dates,
-                y=q["p90"]["net_worth"],
-                mode="lines",
-                line=dict(width=0),
-                showlegend=False,
-                hoverinfo="skip",
-            ))
-            fig_mc.add_trace(go.Scatter(
-                x=horizon_dates,
-                y=q["p10"]["net_worth"],
-                mode="lines",
-                line=dict(width=0),
-                fill="tonexty",
-                fillcolor=f"rgba({mc_rgb[key]}, 0.15)",
-                name=t("mc.scenario_band").format(label=short_names[key]),
-                hovertemplate="%{x|%b %Y}: %{y:,.0f} kr<extra></extra>",
-            ))
-            # Median line
-            fig_mc.add_trace(go.Scatter(
-                x=horizon_dates,
-                y=q["p50"]["net_worth"],
-                mode="lines",
-                line=dict(color=mc_colors[key], width=2.5),
-                name=t("mc.scenario_median").format(label=short_names[key]),
-                hovertemplate="%{x|%b %Y}: %{y:,.0f} kr<extra></extra>",
-            ))
-
-        fig_mc.update_layout(
-            height=440,
-            xaxis_title=t("chart.xaxis"),
-            yaxis_title=t("chart.yaxis"),
-            hovermode="x unified",
-            legend=dict(orientation="h", y=-0.2),
-            margin=dict(l=20, r=20, t=20, b=20),
-        )
-        fig_mc.update_xaxes(dtick="M12", tickformat="%Y")
-        fig_mc.update_yaxes(tickformat=",.0f")
-        st.plotly_chart(fig_mc, width="stretch")
-
-        # Terminal distribution table
-        st.markdown(f"**{t('mc.terminal_header')}**")
-        mc_rows = []
-        for key in ("A", "B", "C"):
-            s = mc_scenarios[key]
-            mc_rows.append({
-                t("metrics.col.scenario"): short_names[key],
-                t("mc.col.p10"): format_money(s["p10"]) + " kr",
-                t("mc.col.p50"): format_money(s["p50"]) + " kr",
-                t("mc.col.p90"): format_money(s["p90"]) + " kr",
-                t("mc.col.p_infeasible"): f"{s['p_infeasible'] * 100:.1f} %",
-            })
-        st.table(pd.DataFrame(mc_rows).set_index(t("metrics.col.scenario")))
-
-        st.caption(t("mc.risk_note"))
-
 
 with st.expander(t("flow.header"), expanded=False):
     df_c = scenarios["C"]["df"]

@@ -143,8 +143,6 @@ def _apply_year_end_portfolio_tax(member: _MemberRuntime) -> None:
 def simulate(
     config: SimulationConfig,
     rate_path: np.ndarray | None = None,
-    portfolio_monthly_returns: dict[tuple[int, int], np.ndarray] | None = None,
-    property_monthly_return: np.ndarray | None = None,
 ) -> pd.DataFrame:
     """Run the monthly multi-member simulation.
 
@@ -157,29 +155,12 @@ def simulate(
         house_equity, net_worth
         ltv_amort, ltv_market
         infeasible (True if any member's monthly cash_flow < −liquidity_buffer)
-
-    Optional Monte Carlo overrides:
-        rate_path — length-N monthly rate array, replaces the deterministic
-                    scenario+LTV-penalty path.
-        portfolio_monthly_returns — dict keyed (member_idx, bucket_idx) to
-                    length-N arrays of monthly decimal returns for that
-                    bucket. Missing keys fall back to the bucket's
-                    deterministic annual_return / 12.
-        property_monthly_return — length-N monthly decimal appreciation
-                    array, replaces the deterministic compounded rate.
     """
     n_months = config.years * 12
     if rate_path is None:
         rate_path = _rate_path_for(config)
     if len(rate_path) != n_months:
         raise ValueError(f"rate_path length {len(rate_path)} != {n_months}")
-    if (
-        property_monthly_return is not None
-        and len(property_monthly_return) != n_months
-    ):
-        raise ValueError(
-            f"property_monthly_return length {len(property_monthly_return)} != {n_months}"
-        )
 
     if not config.members:
         raise ValueError("SimulationConfig must have at least one household member")
@@ -315,16 +296,12 @@ def simulate(
             household_savings += savings
 
             # Route savings into buckets per strategy allocation_fraction.
-            for b_idx, b in enumerate(mr.buckets):
+            for b in mr.buckets:
                 contribution = savings * b.allocation_fraction
                 b.value += contribution
                 b.deposits_ytd += contribution
-                # Monthly compound growth — stochastic override wins when supplied
-                if portfolio_monthly_returns is not None and (i, b_idx) in portfolio_monthly_returns:
-                    monthly_r = float(portfolio_monthly_returns[(i, b_idx)][t])
-                else:
-                    monthly_r = b.annual_return / 12.0
-                b.value *= 1 + monthly_r
+                # Monthly compound growth
+                b.value *= 1 + b.annual_return / 12.0
 
             # Track quarterly openings at start of Q2/Q3/Q4
             if month_in_year in (4, 7, 10):
@@ -333,11 +310,8 @@ def simulate(
                     mr_bucket_val_before_q = b.value
                     b.quarterly_openings[q] = mr_bucket_val_before_q
 
-        # Property appreciation (shared) — stochastic override wins when supplied
-        if property_monthly_return is not None:
-            V *= 1 + float(property_monthly_return[t])
-        else:
-            V *= (1 + config.property_appreciation) ** (1 / 12)
+        # Property appreciation (shared)
+        V *= (1 + config.property_appreciation) ** (1 / 12)
 
         # Year-end reconciliation (December)
         if month_in_year == 12:
