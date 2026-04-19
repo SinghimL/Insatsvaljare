@@ -322,8 +322,19 @@ if st.session_state.get("_bounds_key") != bounds_key:
     default_insats = insats_max_kr
     st.session_state.insats_kr = default_insats
     st.session_state.insats_text = format_money(default_insats)
+    st.session_state.insats_slider = default_insats
     st.session_state.ltv_pct = int(round((V - default_insats) / V * 100))
     st.session_state.ltv_text = str(st.session_state.ltv_pct)
+
+
+def _sync_from_insats(insats: int) -> None:
+    insats = max(insats_min_kr, min(insats_max_kr, insats))
+    st.session_state.insats_kr = insats
+    st.session_state.insats_text = format_money(insats)
+    st.session_state.insats_slider = insats
+    ltv = int(round((V - insats) / V * 100))
+    st.session_state.ltv_pct = ltv
+    st.session_state.ltv_text = str(ltv)
 
 
 def _on_insats_change():
@@ -331,12 +342,7 @@ def _on_insats_change():
     if parsed is None:
         st.session_state.insats_text = format_money(st.session_state.insats_kr)
         return
-    parsed = max(insats_min_kr, min(insats_max_kr, parsed))
-    st.session_state.insats_kr = parsed
-    st.session_state.insats_text = format_money(parsed)
-    ltv = int(round((V - parsed) / V * 100))
-    st.session_state.ltv_pct = ltv
-    st.session_state.ltv_text = str(ltv)
+    _sync_from_insats(parsed)
 
 
 def _on_ltv_change():
@@ -346,12 +352,11 @@ def _on_ltv_change():
         st.session_state.ltv_text = str(st.session_state.ltv_pct)
         return
     ltv = max(ltv_min_pct, min(ltv_max_pct, ltv))
-    insats = int(round(V * (100 - ltv) / 100))
-    insats = max(insats_min_kr, min(insats_max_kr, insats))
-    st.session_state.insats_kr = insats
-    st.session_state.insats_text = format_money(insats)
-    st.session_state.ltv_pct = int(round((V - insats) / V * 100))
-    st.session_state.ltv_text = str(st.session_state.ltv_pct)
+    _sync_from_insats(int(round(V * (100 - ltv) / 100)))
+
+
+def _on_slider_change():
+    _sync_from_insats(int(st.session_state.insats_slider))
 
 
 with st.container(border=True):
@@ -368,6 +373,24 @@ with st.container(border=True):
         key="ltv_text",
         on_change=_on_ltv_change,
     )
+
+    if insats_max_kr > insats_min_kr:
+        slider_step = max(10_000, (insats_max_kr - insats_min_kr) // 200)
+        st.slider(
+            "Dra för att justera insats",
+            min_value=insats_min_kr,
+            max_value=insats_max_kr,
+            step=slider_step,
+            key="insats_slider",
+            on_change=_on_slider_change,
+            format="%d kr",
+            label_visibility="collapsed",
+        )
+    else:
+        st.caption(
+            f"Insats låst till {format_money(insats_min_kr)} kr "
+            f"(endast möjliga värdet)"
+        )
 
     col_b, col_s = st.columns(2)
     binding_label = col_b.selectbox(
