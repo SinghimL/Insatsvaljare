@@ -9,7 +9,19 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
-from insatsvaljare.defaults import SimulationConfig
+from insatsvaljare.defaults import (
+    CustomBucket,
+    HouseholdMember,
+    InvestmentStrategy,
+    SimulationConfig,
+    TaxModel,
+)
+from insatsvaljare.kommunalskatt import (
+    fetch_kommunalskatt_table,
+    kommun_records,
+    load_or_fetch,
+    save_snapshot,
+)
 from insatsvaljare.model import (
     ltv_sweep,
     simulate,
@@ -22,20 +34,21 @@ from insatsvaljare.rates import (
 from insatsvaljare.stabelo import (
     FIXATION_MONTHS,
     fetch_rate_table,
-    load_or_fetch,
+    load_or_fetch as stabelo_load_or_fetch,
     lookup_rate,
-    save_snapshot,
+    save_snapshot as stabelo_save_snapshot,
 )
-from insatsvaljare.tax import AccountType
+from insatsvaljare.tax_income import compute_net_income
 
-SNAPSHOT_PATH = Path(__file__).resolve().parents[2] / "ref" / "stabelo_snapshot.json"
+STABELO_SNAPSHOT = Path(__file__).resolve().parents[2] / "ref" / "stabelo_snapshot.json"
+KOMMUN_SNAPSHOT = Path(__file__).resolve().parents[2] / "ref" / "kommunalskatt_snapshot.json"
 
 
 def _horizon_dates(years: int) -> pd.DatetimeIndex:
-    """Month-end dates for each simulated month, starting from the current month."""
     today = pd.Timestamp.today()
     start = pd.Timestamp(year=today.year, month=today.month, day=1)
     return pd.date_range(start=start, periods=years * 12, freq="ME")
+
 
 st.set_page_config(
     page_title="Insatsväljare för bostadsrätt",
@@ -109,10 +122,10 @@ def money_input(
 def _run_three_scenarios(config_json: str, user_insats_kr: int):
     base = SimulationConfig.model_validate_json(config_json)
     V = base.property_value
-    cash = base.initial_cash
+    total_cash = base.total_initial_cash
 
     insats_min = 0.10 * V
-    insats_max = min(cash, V)
+    insats_max = min(total_cash, V)
 
     insats_a = insats_max
     ltv_a = max(0.0, (V - insats_a) / V)
@@ -122,9 +135,6 @@ def _run_three_scenarios(config_json: str, user_insats_kr: int):
     ltv_c = max(0.0, (V - insats_c) / V)
 
     out = {}
-    # Scenarios A and B use per-LTV scenario rate (not the user's Stabelo
-    # override, which was priced for the user's chosen LTV tier only).
-    # Scenario C keeps whatever rate_override the user configured.
     for key, ltv, insats, keep_override in [
         ("A", ltv_a, insats_a, False),
         ("B", ltv_b, insats_b, False),
@@ -156,14 +166,24 @@ def _run_sweep(config_json: str):
 @st.cache_resource(show_spinner=False)
 def _load_stabelo_snapshot():
     try:
-        return load_or_fetch(SNAPSHOT_PATH, force_refresh=False)
+        return stabelo_load_or_fetch(STABELO_SNAPSHOT, force_refresh=False)
     except Exception as e:
         st.warning(f"Kunde inte ladda Stabelo-snapshot: {e}")
         return []
 
 
+@st.cache_resource(show_spinner=False)
+def _load_kommun_snapshot():
+    try:
+        records = load_or_fetch(KOMMUN_SNAPSHOT)
+        return kommun_records(records)
+    except Exception as e:
+        st.warning(f"Kunde inte ladda kommunalskatt-snapshot: {e}")
+        return []
+
+
 # ----------------------------------------------------------------
-# Sidebar — inputs (everything except Lån)
+# Sidebar — shared/household-wide inputs
 # ----------------------------------------------------------------
 
 st.sidebar.title("🏠 Insatsväljare för bostadsrätt")
@@ -184,64 +204,54 @@ with st.sidebar.expander("📍 Bostad", expanded=True):
         min_val=0,
         max_val=50_000,
     )
-    appreciation = st.slider(
-        "Värdeökning (%/år)", -2.0, 10.0, 4.0, 0.25
-    ) / 100
-    avgift_inflation = st.slider(
-        "Avgiftsinflation (%/år)", 0.0, 8.0, 2.5, 0.25
-    ) / 100
+    appreciation = st.slider("Värdeökning (%/år)", -2.0, 10.0, 4.0, 0.25) / 100
+    avgift_inflation = st.slider("Avgiftsinflation (%/år)", 0.0, 8.0, 2.5, 0.25) / 100
 
 with st.sidebar.expander("⏱ Tidshorisont", expanded=True):
-    years = st.slider(
-        "Innehavstid (år)",
-        min_value=1,
-        max_value=30,
-        value=10,
-        step=1,
-        help=(
-            "Simuleringens längd. Amortering, ISK schablonskatt och "
-            "värdeökning räknas månadsvis över hela horisonten."
-        ),
-    )
+    years = st.slider("Innehavstid (år)", 1, 30, 10, 1)
+
+with st.sidebar.expander("📍 Kommun (för skatteberäkning)", expanded=True):
+    kommun_list = _load_kommun_snapshot()
+    if kommun_list:
+        kommun_names = [r["name"] for r in kommun_list]
+        default_idx = kommun_names.index("Stockholm") if "Stockholm" in kommun_names else 0
+        chosen_name = st.selectbox(
+            "Välj kommun (stöder sökning)",
+            kommun_names,
+            index=default_idx,
+        )
+        chosen_rec = next(r for r in kommun_list if r["name"] == chosen_name)
+        kommunal_tax_rate = float(chosen_rec["rate"]) / 100.0
+        st.caption(
+            f"Total kommunalskatt (kommun + region): **{chosen_rec['rate']:.2f} %**"
+        )
+    else:
+        kommunal_tax_rate = st.slider("Kommunalskatt (%)", 28.0, 36.0, 30.55, 0.01) / 100
+    if st.button("🔄 Uppdatera kommunalskatt", help="Hämta senaste siffror från SCB"):
+        try:
+            records = fetch_kommunalskatt_table(year=2026)
+            save_snapshot(records, KOMMUN_SNAPSHOT)
+            _load_kommun_snapshot.clear()
+            st.success(f"Uppdaterat ({len(records)} poster)")
+            st.rerun()
+        except Exception as e:
+            st.error(f"Misslyckades: {e}")
 
 with st.sidebar.expander("🏠 Amortering", expanded=False):
     allow_5y = st.checkbox(
         "Tillåt omvärdering vart 5:e år",
         value=False,
-        help=(
-            "Av: amorteringsgrund (V₀) fryst under hela horisonten. "
-            "På: vart femte år omvärderas bostaden till aktuellt "
-            "marknadsvärde, vilket kan sänka amortering."
-        ),
+        help="Av: amorteringsgrund fryst. På: 5-års omvärdering till marknad.",
     )
 
-with st.sidebar.expander("👤 Hushåll", expanded=True):
-    initial_cash = money_input(
-        "Tillgänglig insats + investering (kr)",
-        key="initial_cash_text",
-        default=5_400_000,
-        min_val=0,
-        max_val=50_000_000,
-        help=(
-            "Total köpkraft. Måste räcka till insats (minst 10 % av "
-            "köpeskilling). Överskott investeras — detta är modellens "
-            "kärnmekanism."
-        ),
+with st.sidebar.expander("🏁 Exit (annotering)", expanded=False):
+    broker_fee = st.slider("Mäklararvode (%)", 0.0, 8.0, 4.0, 0.25) / 100
+    st.caption(
+        "Huvudvyn antar innehav till horisontens slut. "
+        "Annoteringen under tabellen visar netto om du säljer."
     )
-    annual_income = money_input(
-        "Hushållsinkomst brutto (kr/år)",
-        key="annual_income_text",
-        default=900_000,
-        min_val=0,
-        max_val=20_000_000,
-    )
-    monthly_living = money_input(
-        "Månadsutgift ex. boende (kr)",
-        key="monthly_living_text",
-        default=25_000,
-        min_val=0,
-        max_val=500_000,
-    )
+
+with st.sidebar.expander("⚙️ Övriga inställningar", expanded=False):
     income_growth = st.slider("Inkomstökning (%/år)", 0.0, 8.0, 3.0, 0.25) / 100
     liquidity_buffer = money_input(
         "Likviditetsbuffert (kr)",
@@ -251,75 +261,261 @@ with st.sidebar.expander("👤 Hushåll", expanded=True):
         max_val=1_000_000,
     )
 
-with st.sidebar.expander("📈 Investering", expanded=True):
-    portfolio_return = st.slider(
-        "Förväntad portföljavkastning (%/år)", 0.0, 15.0, 6.5, 0.25
-    ) / 100
-    account_label = st.radio(
-        "Kontotyp",
-        ["ISK", "KF", "Övrigt (anpassad skatt)"],
-        index=0,
-        horizontal=True,
-    )
-    if account_label == "ISK":
-        account_type = AccountType.ISK
-    elif account_label == "KF":
-        account_type = AccountType.KF
-    else:
-        account_type = AccountType.OTHER
-
-    if account_type in (AccountType.ISK, AccountType.KF):
-        n_persons = st.radio(
-            "Antal personer (för fribelopp)",
-            [1, 2],
-            index=0,
-            horizontal=True,
-        )
-        st.caption(
-            f"Fribelopp: {format_money(n_persons * 300_000)} kr; "
-            f"effektiv skatt 1,065 % på överskjutande"
-        )
-        other_rate = 0.30
-    else:
-        n_persons = 1
-        other_rate = st.slider(
-            "Realisationsvinstskatt (%)",
-            0, 35, 30, 1,
-        ) / 100
-
-with st.sidebar.expander("🏁 Exit (annotering)", expanded=False):
-    broker_fee = st.slider("Mäklararvode (%)", 0.0, 8.0, 4.0, 0.25) / 100
-    st.caption(
-        "Huvudvyn förutsätter innehav till horisontens slut. "
-        "Annoteringen under tabellen visar netto om du säljer vid slutet "
-        "(22 % reavinstskatt + mäklararvode)."
-    )
-
 
 # ----------------------------------------------------------------
-# Top: Lån group (main decision panel)
+# Household panel — member tabs with add/remove
 # ----------------------------------------------------------------
 
 st.title("🏠 Insatsväljare")
 
+TAX_MODEL_LABELS = {
+    TaxModel.ISK: "ISK (1,065 % schablonskatt)",
+    TaxModel.KF: "KF (1,065 % schablonskatt)",
+    TaxModel.AF: "AF (30 % årlig realisation)",
+    TaxModel.NONE: "Ingen skatt (0 %)",
+}
+STRATEGY_LABELS = {
+    InvestmentStrategy.SPARKONTO: "💰 Sparkonto (bankränta)",
+    InvestmentStrategy.RANTEFOND_ISK: "📈 Räntefond ISK",
+    InvestmentStrategy.ANPASSAD: "🛠 Anpassad (flera bucket)",
+}
+
+if "n_members" not in st.session_state:
+    st.session_state.n_members = 1
+
+
+def _member_defaults(i: int) -> dict:
+    if i == 0:
+        return {
+            "name": "Medlem 1",
+            "initial_cash": 5_400_000,
+            "annual_brutto_income": 900_000,
+            "monthly_personal_expenses": 25_000,
+            "strategy": InvestmentStrategy.RANTEFOND_ISK.value,
+            "sparkonto_return": 2.5,
+            "rantefond_isk_return": 6.5,
+        }
+    return {
+        "name": f"Medlem {i + 1}",
+        "initial_cash": 0,
+        "annual_brutto_income": 400_000,
+        "monthly_personal_expenses": 15_000,
+        "strategy": InvestmentStrategy.RANTEFOND_ISK.value,
+        "sparkonto_return": 2.5,
+        "rantefond_isk_return": 6.5,
+    }
+
+
+def _ensure_member_state(i: int) -> None:
+    d = _member_defaults(i)
+    st.session_state.setdefault(f"m{i}_name", d["name"])
+    st.session_state.setdefault(f"m{i}_cash_text", format_money(d["initial_cash"]))
+    st.session_state.setdefault(f"m{i}_brutto_text", format_money(d["annual_brutto_income"]))
+    st.session_state.setdefault(
+        f"m{i}_expenses_text", format_money(d["monthly_personal_expenses"])
+    )
+    st.session_state.setdefault(f"m{i}_strategy", d["strategy"])
+    st.session_state.setdefault(f"m{i}_sparkonto_return", d["sparkonto_return"])
+    st.session_state.setdefault(f"m{i}_rantefond_return", d["rantefond_isk_return"])
+    st.session_state.setdefault(f"m{i}_n_buckets", 1)
+    # Default first bucket: 100 % aktier ISK @ 6.5 %
+    st.session_state.setdefault(f"m{i}_b0_alloc", 100)
+    st.session_state.setdefault(f"m{i}_b0_return", 6.5)
+    st.session_state.setdefault(f"m{i}_b0_tax", TaxModel.ISK.value)
+
+
+for i in range(st.session_state.n_members):
+    _ensure_member_state(i)
+
+
+with st.container(border=True):
+    hdr_col1, hdr_col2, hdr_col3 = st.columns([3, 1, 1])
+    hdr_col1.markdown("### 👪 Hushåll")
+    if hdr_col2.button("➕ Ny medlem", use_container_width=True):
+        i = st.session_state.n_members
+        _ensure_member_state(i)
+        st.session_state.n_members += 1
+        st.rerun()
+    if hdr_col3.button(
+        "➖ Ta bort sist",
+        use_container_width=True,
+        disabled=st.session_state.n_members <= 1,
+    ):
+        st.session_state.n_members -= 1
+        st.rerun()
+
+    tab_labels = [st.session_state[f"m{i}_name"] for i in range(st.session_state.n_members)]
+    tabs = st.tabs(tab_labels)
+    for i, tab in enumerate(tabs):
+        with tab:
+            c1, c2 = st.columns(2)
+            c1.text_input("Namn", key=f"m{i}_name")
+            c2.selectbox(
+                "Investeringsstrategi",
+                [s.value for s in InvestmentStrategy],
+                format_func=lambda v: STRATEGY_LABELS[InvestmentStrategy(v)],
+                key=f"m{i}_strategy",
+            )
+
+            c3, c4, c5 = st.columns(3)
+            with c3:
+                money_input(
+                    "Startkapital (kr)",
+                    key=f"m{i}_cash_text",
+                    default=5_400_000 if i == 0 else 0,
+                    min_val=0,
+                    max_val=50_000_000,
+                )
+            with c4:
+                money_input(
+                    "Brutto lön (kr/år)",
+                    key=f"m{i}_brutto_text",
+                    default=900_000 if i == 0 else 400_000,
+                    min_val=0,
+                    max_val=20_000_000,
+                )
+            with c5:
+                money_input(
+                    "Personliga utgifter (kr/mån)",
+                    key=f"m{i}_expenses_text",
+                    default=25_000 if i == 0 else 15_000,
+                    min_val=0,
+                    max_val=500_000,
+                    help=(
+                        "Endast personlig konsumtion (mat, kläder, transport). "
+                        "Avgift + lån fördelas automatiskt proportionellt mot brutto."
+                    ),
+                )
+
+            strategy_val = st.session_state[f"m{i}_strategy"]
+            if strategy_val == InvestmentStrategy.SPARKONTO.value:
+                st.slider(
+                    "Årsränta (%) — banksparkonto",
+                    min_value=0.0, max_value=10.0, step=0.1,
+                    key=f"m{i}_sparkonto_return",
+                )
+            elif strategy_val == InvestmentStrategy.RANTEFOND_ISK.value:
+                st.slider(
+                    "Förväntad avkastning (%/år) — ISK-fond",
+                    min_value=0.0, max_value=15.0, step=0.25,
+                    key=f"m{i}_rantefond_return",
+                )
+            else:  # ANPASSAD
+                st.markdown("**Bucketer** (summan måste vara 100 %)")
+                bc1, bc2 = st.columns([1, 1])
+                if bc1.button(f"➕ Ny bucket", key=f"m{i}_add_bucket"):
+                    j = st.session_state[f"m{i}_n_buckets"]
+                    st.session_state[f"m{i}_b{j}_alloc"] = 0
+                    st.session_state[f"m{i}_b{j}_return"] = 5.0
+                    st.session_state[f"m{i}_b{j}_tax"] = TaxModel.ISK.value
+                    st.session_state[f"m{i}_n_buckets"] += 1
+                    st.rerun()
+                if bc2.button(
+                    f"➖ Ta bort sist",
+                    key=f"m{i}_remove_bucket",
+                    disabled=st.session_state[f"m{i}_n_buckets"] <= 1,
+                ):
+                    st.session_state[f"m{i}_n_buckets"] -= 1
+                    st.rerun()
+
+                running_alloc = 0.0
+                for j in range(st.session_state[f"m{i}_n_buckets"]):
+                    bucket_cols = st.columns([1, 1, 2])
+                    bucket_cols[0].number_input(
+                        f"Bucket {j + 1} andel (%)",
+                        min_value=0, max_value=100,
+                        key=f"m{i}_b{j}_alloc",
+                    )
+                    bucket_cols[1].number_input(
+                        f"Avkastning (%/år)",
+                        min_value=-50.0, max_value=50.0, step=0.25,
+                        key=f"m{i}_b{j}_return",
+                    )
+                    bucket_cols[2].selectbox(
+                        "Skattemodell",
+                        [tm.value for tm in (TaxModel.ISK, TaxModel.KF, TaxModel.AF, TaxModel.NONE)],
+                        format_func=lambda v: TAX_MODEL_LABELS[TaxModel(v)],
+                        key=f"m{i}_b{j}_tax",
+                    )
+                    running_alloc += st.session_state[f"m{i}_b{j}_alloc"]
+                if abs(running_alloc - 100) > 1e-4:
+                    st.warning(f"Summan av andelarna: **{running_alloc:.1f} %** — måste vara 100 %.")
+
+            # Show computed netto preview
+            try:
+                brutto_val = parse_money(st.session_state[f"m{i}_brutto_text"]) or 0
+                netto_preview = compute_net_income(
+                    brutto=brutto_val,
+                    kommunal_rate=kommunal_tax_rate,
+                    annual_interest=0,
+                )
+                st.caption(
+                    f"Preview: brutto {format_money(netto_preview.brutto)} kr/år → "
+                    f"netto (före ränteavdrag) {format_money(netto_preview.netto)} kr/år "
+                    f"≈ {format_money(netto_preview.netto / 12)} kr/mån"
+                )
+            except Exception:
+                pass
+
+
+# ----------------------------------------------------------------
+# Build members list from session_state
+# ----------------------------------------------------------------
+
+def _build_member_from_state(i: int) -> HouseholdMember:
+    strategy_val = st.session_state[f"m{i}_strategy"]
+    cash = parse_money(st.session_state[f"m{i}_cash_text"]) or 0
+    brutto = parse_money(st.session_state[f"m{i}_brutto_text"]) or 0
+    expenses = parse_money(st.session_state[f"m{i}_expenses_text"]) or 0
+    custom_buckets: list[CustomBucket] = []
+    if strategy_val == InvestmentStrategy.ANPASSAD.value:
+        for j in range(st.session_state[f"m{i}_n_buckets"]):
+            custom_buckets.append(CustomBucket(
+                name=f"Bucket {j + 1}",
+                allocation_fraction=st.session_state[f"m{i}_b{j}_alloc"] / 100.0,
+                annual_return=st.session_state[f"m{i}_b{j}_return"] / 100.0,
+                tax_model=TaxModel(st.session_state[f"m{i}_b{j}_tax"]),
+            ))
+    return HouseholdMember(
+        name=st.session_state[f"m{i}_name"],
+        initial_cash=float(cash),
+        annual_brutto_income=float(brutto),
+        monthly_personal_expenses=float(expenses),
+        strategy=InvestmentStrategy(strategy_val),
+        sparkonto_return=st.session_state[f"m{i}_sparkonto_return"] / 100.0,
+        rantefond_isk_return=st.session_state[f"m{i}_rantefond_return"] / 100.0,
+        custom_buckets=custom_buckets,
+    )
+
+
+try:
+    members = [_build_member_from_state(i) for i in range(st.session_state.n_members)]
+except ValueError as e:
+    st.error(f"Hushållskonfiguration ogiltig: {e}")
+    st.stop()
+
+
+# ----------------------------------------------------------------
+# Lån panel — insats / LTV bidirectional
+# ----------------------------------------------------------------
+
 V = float(property_value)
-cash = float(initial_cash)
+total_cash = float(sum(m.initial_cash for m in members))
 
 insats_min_kr = int(round(0.10 * V))
-insats_max_kr = int(round(min(cash, V)))
+insats_max_kr = int(round(min(total_cash, V)))
 ltv_min_pct = max(0, int(round((V - insats_max_kr) / V * 100)))
 ltv_max_pct = 90
 
-if cash < insats_min_kr:
+if total_cash < insats_min_kr:
     st.error(
-        f"Otillräcklig kontantinsats: du har {format_money(cash)} kr men "
-        f"behöver minst {format_money(insats_min_kr)} kr (10 % av "
-        f"köpeskilling; bolånetaket 2026-04-01 är 90 %)."
+        f"Otillräcklig total kontantinsats: hushållet har {format_money(total_cash)} kr "
+        f"men behöver minst {format_money(insats_min_kr)} kr (10 % av köpeskilling; "
+        f"bolånetaket 2026-04-01 är 90 %)."
     )
     st.stop()
 
-# Reset insats state when bounds change (V or cash).
-bounds_key = f"{V:.0f}:{cash:.0f}"
+bounds_key = f"{V:.0f}:{total_cash:.0f}"
 if st.session_state.get("_bounds_key") != bounds_key:
     st.session_state._bounds_key = bounds_key
     default_insats = insats_max_kr
@@ -391,15 +587,12 @@ with st.container(border=True):
         )
     else:
         st.caption(
-            f"Insats låst till {format_money(insats_min_kr)} kr "
-            f"(endast möjliga värdet)"
+            f"Insats låst till {format_money(insats_min_kr)} kr (endast möjliga värdet)"
         )
 
     col_b, col_s = st.columns(2)
     binding_label = col_b.selectbox(
-        "Bindningstid",
-        list(FIXATION_MONTHS.keys()),
-        index=0,
+        "Bindningstid", list(FIXATION_MONTHS.keys()), index=0,
     )
     binding_months = FIXATION_MONTHS[binding_label]
     scenario_label = col_s.selectbox(
@@ -443,7 +636,7 @@ with st.container(border=True):
     if col_btn.button("🔄 Uppdatera Stabelo"):
         try:
             new_records = fetch_rate_table()
-            save_snapshot(new_records, SNAPSHOT_PATH)
+            stabelo_save_snapshot(new_records, STABELO_SNAPSHOT)
             _load_stabelo_snapshot.clear()
             st.success(f"Uppdaterat ({len(new_records)} poster)")
             st.rerun()
@@ -452,7 +645,7 @@ with st.container(border=True):
 
 
 # ----------------------------------------------------------------
-# Build config
+# Build config and run
 # ----------------------------------------------------------------
 
 config = SimulationConfig(
@@ -464,31 +657,21 @@ config = SimulationConfig(
     binding_months=binding_months,
     rate_scenario=scenario,
     rate_override=rate_override,
-    initial_cash=float(initial_cash),
-    allow_5y_revaluation=allow_5y,
-    annual_gross_income=float(annual_income),
-    monthly_living_cost=float(monthly_living),
+    members=members,
+    kommunal_tax_rate=kommunal_tax_rate,
     income_growth=income_growth,
     liquidity_buffer=float(liquidity_buffer),
-    portfolio_return=portfolio_return,
-    account_type=account_type,
-    n_persons_for_fribelopp=int(n_persons),
-    other_account_tax_rate=other_rate,
+    allow_5y_revaluation=allow_5y,
     sell_at_end=False,
     broker_fee_fraction=broker_fee,
     years=int(years),
 )
 
-
-# ----------------------------------------------------------------
-# Run three scenarios (A, B, C)
-# ----------------------------------------------------------------
-
 scenarios = _run_three_scenarios(config.model_dump_json(), int(user_insats_kr))
 
 
 # ----------------------------------------------------------------
-# Terminal metrics table (3 × 4, held-to-end)
+# Metrics table (3 × 4, held-to-end)
 # ----------------------------------------------------------------
 
 st.subheader("Slutvärden (innehav till horisontens slut)")
@@ -617,7 +800,7 @@ st.plotly_chart(fig_sweep, width="stretch")
 
 
 # ----------------------------------------------------------------
-# Expanders — monthly cash flow + rate sensitivity (scenario C)
+# Expanders
 # ----------------------------------------------------------------
 
 with st.expander("📊 Månadsvis kassaflöde (Ditt val)", expanded=False):
@@ -662,6 +845,9 @@ with st.expander("🔬 Räntekänslighet (±1 pp shock, Ditt val)", expanded=Fal
 
 st.caption(
     "Modellregler: 2026-04-01 FI-reform (LTV-tak 90 %, amortering 0/1/2 %-trappa, "
-    "avskaffat 4,5×-tillägg). ISK 2026: 300 000 kr fribelopp, 1,065 % på överskott. "
-    "Se `ref/swedish-mortgage-policy-2026.md` för källor."
+    "avskaffat 4,5×-tillägg). ISK 2026: 300 000 kr fribelopp per person, 1,065 % på "
+    "överskott. Inkomstskatt: progressiv kommunal + 20 % statlig över skiktgränsen "
+    "643 000 kr; jobbskatteavdrag enligt Prop. 2025/26:32; ränteavdrag begränsas till "
+    "det skattebelopp som återstår efter JSA. "
+    "Se `ref/swedish-mortgage-policy-2026.md` och `ref/swedish-income-tax-2026.md`."
 )
