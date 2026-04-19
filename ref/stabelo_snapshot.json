@@ -1,0 +1,7063 @@
+{
+  "fetched_at": "2026-04-17T17:07:15.078676+00:00",
+  "source": "https://api.stabelo.se/rate-table.data",
+  "count": 1008,
+  "records": [
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.6
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.6
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.44
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.54
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.48
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.33
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.43
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.27
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.37
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.11
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.21
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.03
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.13
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 2.92
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.02
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 2.92
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.02
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 2.92
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.02
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 2.92
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3M",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.02
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.19
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.29
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.19
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.29
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.13
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.23
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.02
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.12
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 2.96
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.06
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 2.8
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 2.9
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 2.72
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 2.82
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 2.61
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 2.71
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 2.61
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 2.71
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 2.61
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 2.71
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 2.61
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3M",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 2.71
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.19
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.29
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.19
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.29
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.13
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.23
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.02
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.12
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 2.96
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.06
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 2.8
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 2.9
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 2.72
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 2.82
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 2.61
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 2.71
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 2.61
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 2.71
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 2.61
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 2.71
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 2.61
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3M",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 2.71
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.19
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.29
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.19
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.29
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.13
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.23
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.02
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.12
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 2.96
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.06
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 2.8
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 2.9
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 2.72
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 2.82
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 2.61
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 2.71
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 2.61
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 2.71
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 2.61
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 2.71
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 2.61
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3M",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 2.71
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.19
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.29
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.19
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.29
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.13
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.23
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.02
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.12
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 2.96
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.06
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 2.8
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 2.9
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 2.72
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 2.82
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 2.61
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 2.71
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 2.61
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 2.71
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 2.61
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 2.71
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 2.61
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3M",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 2.71
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.32
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.42
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.32
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.42
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.26
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.36
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.2
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.3
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.09
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.19
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.03
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 2.85
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 2.95
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 2.74
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 2.84
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 2.74
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 2.84
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 2.74
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 2.84
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 2.74
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3M",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 2.84
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.34
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.44
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.23
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.33
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.27
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.01
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.11
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.03
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 2.82
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 2.92
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 2.82
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 2.92
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 2.82
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 2.92
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 2.82
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3M",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 2.92
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.24
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.24
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.24
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.24
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.24
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.24
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.24
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.24
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.24
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.24
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.24
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "1Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.24
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "1Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "1Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "1Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 2.83
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "1Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 2.93
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 2.96
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.06
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 2.96
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.06
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 2.96
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.06
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 2.96
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.06
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 2.96
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.06
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 2.96
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.06
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 2.96
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.06
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 2.96
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.06
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 2.96
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.06
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 2.96
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.06
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 2.96
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.06
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 2.96
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "1Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.06
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.04
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.04
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.04
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.04
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.04
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.04
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.04
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.04
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.04
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.04
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.04
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.04
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "1Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.14
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.48
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.48
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.48
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.48
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.48
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.48
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.48
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.48
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.48
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.48
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.48
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "2Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.48
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "2Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "2Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "2Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.07
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "2Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.17
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.2
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.3
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.2
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.3
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.2
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.3
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.2
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.3
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.2
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.3
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.2
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.3
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.2
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.3
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.2
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.3
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.2
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.3
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.2
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.3
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.2
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.3
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.2
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "2Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.3
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "2Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.56
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.56
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.56
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.56
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.56
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.56
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.56
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.56
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.56
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.56
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.56
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "3Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.56
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "3Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "3Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "3Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "3Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.25
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "3Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.38
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "3Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.81
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.81
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.81
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.81
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.81
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.81
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.81
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.81
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.81
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.81
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.81
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "5Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.81
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "5Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "5Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "5Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.4
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "5Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.5
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.53
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.63
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.53
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.63
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.53
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.63
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.53
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.63
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.53
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.63
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.53
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.63
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.53
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.63
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.53
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.63
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.53
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.63
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.53
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.63
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.53
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.63
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.53
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "5Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.63
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 3.61
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 3.61
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 3.61
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 3.61
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 3.61
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 3.61
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 3.61
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 3.61
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 3.61
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 3.61
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 3.61
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 3.61
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "5Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 3.71
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 4.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 4.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 4.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 4.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 4.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 4.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 4.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 4.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 4.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 4.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 4.46
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": null,
+      "fixation": "10Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 4.46
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 60.0,
+      "fixation": "10Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 65.0,
+      "fixation": "10Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 70.0,
+      "fixation": "10Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 4.05
+    },
+    {
+      "ltv_pct": 75.0,
+      "fixation": "10Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 4.15
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 4.18
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 4.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 4.18
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 4.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 4.18
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 4.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 4.18
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 4.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 4.18
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 4.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 4.18
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 4.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 4.18
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 4.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 4.18
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 4.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 4.18
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 4.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 4.18
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 4.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 4.18
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 4.28
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 4.18
+    },
+    {
+      "ltv_pct": 80.0,
+      "fixation": "10Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 4.28
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 0.0,
+      "epc": "B",
+      "rate_pct": 4.26
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 0.0,
+      "epc": null,
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 500000.0,
+      "epc": "B",
+      "rate_pct": 4.26
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 500000.0,
+      "epc": null,
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 600000.0,
+      "epc": "B",
+      "rate_pct": 4.26
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 600000.0,
+      "epc": null,
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 700000.0,
+      "epc": "B",
+      "rate_pct": 4.26
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 700000.0,
+      "epc": null,
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 800000.0,
+      "epc": "B",
+      "rate_pct": 4.26
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 800000.0,
+      "epc": null,
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 900000.0,
+      "epc": "B",
+      "rate_pct": 4.26
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 900000.0,
+      "epc": null,
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 1000000.0,
+      "epc": "B",
+      "rate_pct": 4.26
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 1000000.0,
+      "epc": null,
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 1500000.0,
+      "epc": "B",
+      "rate_pct": 4.26
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 1500000.0,
+      "epc": null,
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 2000000.0,
+      "epc": "B",
+      "rate_pct": 4.26
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 2000000.0,
+      "epc": null,
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 3500000.0,
+      "epc": "B",
+      "rate_pct": 4.26
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 3500000.0,
+      "epc": null,
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 4500000.0,
+      "epc": "B",
+      "rate_pct": 4.26
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 4500000.0,
+      "epc": null,
+      "rate_pct": 4.36
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 10000000.0,
+      "epc": "B",
+      "rate_pct": 4.26
+    },
+    {
+      "ltv_pct": 85.0,
+      "fixation": "10Y",
+      "amount_kr": 10000000.0,
+      "epc": null,
+      "rate_pct": 4.36
+    }
+  ]
+}
