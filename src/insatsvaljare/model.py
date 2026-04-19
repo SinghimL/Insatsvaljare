@@ -86,7 +86,7 @@ def simulate(
     annual_income = config.annual_gross_income
     monthly_income = annual_income / 12
     monthly_living = config.monthly_living_cost
-    annual_avgift_per_m2 = config.monthly_avgift_per_m2
+    base_monthly_avgift = config.monthly_avgift
 
     # Year-end bookkeeping
     interest_ytd = 0.0
@@ -117,11 +117,7 @@ def simulate(
         interest_m = L * rate / 12
 
         # Monthly avgift — grows once per year (in Jan = month_in_year==1)
-        current_avgift = (
-            annual_avgift_per_m2
-            * config.living_area_m2
-            * (1 + config.avgift_inflation) ** year
-        )
+        current_avgift = base_monthly_avgift * (1 + config.avgift_inflation) ** year
 
         # Cash flow
         cash_flow = (

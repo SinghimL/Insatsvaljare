@@ -13,8 +13,7 @@ class SimulationConfig(BaseModel):
 
     # Property
     property_value: float = Field(6_000_000.0, description="Purchase price in kr")
-    living_area_m2: float = 55.0
-    monthly_avgift_per_m2: float = 60.0
+    monthly_avgift: float = Field(3_300.0, description="Current total monthly BRF fee in kr")
     property_appreciation: float = Field(0.04, description="Annual nominal, e.g. 0.04 = 4 %")
     avgift_inflation: float = 0.025
 

@@ -177,9 +177,12 @@ with st.sidebar.expander("📍 Bostad", expanded=True):
         min_val=1_000_000,
         max_val=30_000_000,
     )
-    living_area_m2 = st.number_input("Boarea (m²)", 20, 300, 55, 1)
-    avgift_per_m2 = st.number_input(
-        "Månadsavgift (kr/m²/mån)", 10.0, 200.0, 60.0, 1.0
+    monthly_avgift = money_input(
+        "Månadsavgift (kr/mån)",
+        key="monthly_avgift_text",
+        default=3_300,
+        min_val=0,
+        max_val=50_000,
     )
     appreciation = st.slider(
         "Värdeökning (%/år)", -2.0, 10.0, 4.0, 0.25
@@ -454,8 +457,7 @@ with st.container(border=True):
 
 config = SimulationConfig(
     property_value=float(property_value),
-    living_area_m2=float(living_area_m2),
-    monthly_avgift_per_m2=float(avgift_per_m2),
+    monthly_avgift=float(monthly_avgift),
     property_appreciation=appreciation,
     avgift_inflation=avgift_inflation,
     ltv_fraction=user_ltv_pct / 100,
